@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      const email = 'alex.morgan.dev@example.com';
+      const email = 'gunjan.dev@example.com';
       navigator.clipboard.writeText(email).then(() => {
         showToast('Email address copied to clipboard!', 'success');
       }).catch(() => {
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.reset();
 
         showToast(
-          'Message Sent Successfully! Alex will get back to you within 24 hours.',
+          'Message Sent Successfully! Gunjan will get back to you within 24 hours.',
           'success'
         );
       }, 1200);

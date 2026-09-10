@@ -1,4 +1,4 @@
-# ⚡ Alex Morgan — Modern Portfolio Website
+# ⚡ Gunjan — Modern Portfolio Website
 
 A sleek, responsive, high-performance developer portfolio built with modern vanilla web standards (HTML5, CSS3, JavaScript). Featuring dark/light themes, glassmorphism aesthetics, ambient gradient effects, interactive case study dialogs, dynamic typewriter text, and real-time form validation.
 
