@@ -1908,7 +1908,7 @@ img {
    ========================================================================== */
 .toast-container {
   position: fixed;
-  bottom: 24px;
+  bottom: 96px;
   right: 24px;
   z-index: 2000;
   display: flex;
