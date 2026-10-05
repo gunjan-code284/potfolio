@@ -4,3 +4,10 @@ Thumbs.db
 .vscode/
 .idea/
 /serve.ps1
+
+# Minecraft Bot
+minecraft-bot/
+**/node_modules/
+**/.env
+**/.env.local
+

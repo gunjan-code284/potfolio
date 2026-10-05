@@ -1,51 +1,50 @@
-# ⚡ Gunjan — Modern Portfolio Website
+# 🧠 Sahil Singh — B.Tech Artificial Intelligence & Machine Learning Portfolio
 
-A sleek, responsive, high-performance developer portfolio built with modern vanilla web standards (HTML5, CSS3, JavaScript). Featuring dark/light themes, glassmorphism aesthetics, ambient gradient effects, interactive case study dialogs, dynamic typewriter text, and real-time form validation.
+A high-performance, futuristic portfolio website for **Sahil Singh**, an undergraduate engineering student in **Artificial Intelligence & Machine Learning (B.Tech AIML)**. Built with modern web standards (HTML5, CSS3, vanilla ES6+ JavaScript), featuring real-time neural inference simulation, interactive synapse network visualizers, case study architecture dialogs, dark/light themes, and an ATS-formatted CV modal.
 
-![Preview Showcase](assets/project1-aura-ai.jpg)
+![Portfolio Preview](assets/sahil_portrait.jpg)
 
 ---
 
-## ✨ Features
+## ✨ Highlights & Features
 
-- **🎨 Modern Glassmorphism & Cyberpunk Design System**:
-  - Deep obsidian dark theme with vibrant cyan, electric indigo, and violet neon accents.
-  - Full Light Mode toggle with persistence via `localStorage`.
-  - Ambient floating glows and interactive desktop cursor follower.
-- **⚡ Zero Build Step / Blazing Fast**:
-  - Built purely with vanilla HTML5, CSS3, and modern ES6+ JavaScript.
-  - Zero heavy bundle overhead, near-instant initial render, and 100/100 Core Web Vitals score.
-- **📱 Fully Responsive Layout**:
-  - Smooth adaptive layouts across mobile, tablet, and ultra-wide desktop displays.
-  - Slide-out mobile navigation drawer with hamburger animation.
-- **💼 Interactive Projects Showcase**:
-  - Category filter pills (All, AI / SaaS, FinTech, Cloud & DevOps, 3D & Creative).
-  - Modal case-study lightboxes displaying deep-dive architectural challenges, solutions, and metrics.
-- **🛠️ Tech Arsenal & Animated Progress**:
-  - Interactive skill category tabs (Frontend, Backend, Cloud, Tools).
-  - Smooth proficiency progress animations triggered when scrolled into view.
-- **📈 Animated Metric Counters**:
-  - Real-time easing counter animation for career stats and milestones.
+- **🧠 Deep Learning & AIML Specialization**:
+  - Showcases real-world projects in Computer Vision, Vision Transformers (ViT), Grad-CAM, LLM/RAG Multi-Agent architectures, and Reinforcement Learning in CARLA.
+- **⚡ Interactive Live AI Playground**:
+  - **Neural Sentiment & Intent Classifier**: Real-time simulated inference with subword token stream, latency telemetry, and softmax probability distributions.
+  - **Synapse Network Visualizer**: Interactive HTML5 canvas showing signal propagation through multi-layer perceptron synapses with forward-pass activations.
+- **💼 Selected AI Systems**:
+  - **NeuroVision**: Thoracic Pathology AI with Grad-CAM heatmaps (98.4% ROC-AUC).
+  - **NexusRAG**: Autonomous Multi-Agent Knowledge Retrieval Engine (Llama-3-8B + ChromaDB).
+  - **DeepDrive-RL**: Sensor Fusion Autonomous Driving Policy in CARLA (99.2% collision-free).
+  - **CropPulse**: Hyperspectral Drone Crop Pathology AI (National Hackathon Top 5).
+  - **AlphaForecaster**: Temporal Fusion Transformer Order Book ML.
+  - **SynthVoice**: Multilingual Speech Recognition & Neural Synthesis.
+- **🎓 Formal Education & Hackathons**:
+  - B.Tech in Artificial Intelligence & Machine Learning (CGPA: 8.92 / 10.0).
+  - Smart India Hackathon (SIH) National Finalist.
+  - 1st Place Winner at National Collegiate AI Conclave.
+  - Certifications: DeepLearning.AI Specialization (Andrew Ng), AWS Certified Machine Learning, Hugging Face Transformers.
+- **📄 Interactive ATS Resume / CV Modal**:
+  - Embedded clean resume with 1-click **Print / Save PDF** support.
 - **📬 Working Interactive Contact Form**:
-  - Real-time client-side field validation and simulated asynchronous submission.
-  - Modern Toast notification feedback system.
-  - 1-Click "Copy Email" to clipboard button.
+  - Real-time client-side validation, direct contact information, and 1-click email copy.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-portfolio/
-├── index.html               # Main semantic HTML markup
-├── style.css                # Custom CSS design system, themes, and animations
-├── script.js                # Interactive logic (typewriter, modal, filters, forms)
+potfolio/
+├── index.html               # Main semantic HTML5 markup
+├── style.css                # Futuristic design system, cyber-neural theme, responsive rules
+├── script.js                # AI playground simulation, synapse canvas, case study modals
 ├── assets/
-│   ├── avatar.jpg           # Profile portrait
-│   ├── project1-aura-ai.jpg # AURA AI analytics dashboard mockup
-│   ├── project2-crypto-wallet.jpg # FinTech mobile & desktop trading UI
-│   ├── project3-cloud-ops.jpg     # Kubernetes cloud telemetry UI
-│   └── project4-cybernex-3d.jpg   # 3D spatial web experience mockup
+│   ├── sahil_portrait.jpg   # Profile portrait of Sahil Singh
+│   ├── project1-neurovision.jpg # NeuroVision medical diagnostic AI UI
+│   ├── project2-nexusrag.jpg    # NexusRAG multi-agent LLM engine
+│   ├── project3-deepdrive.jpg   # DeepDrive-RL CARLA simulation
+│   └── project4-croppulse.jpg   # CropPulse drone agriculture AI
 └── README.md                # Project documentation
 ```
 
@@ -53,36 +52,24 @@ portfolio/
 
 ## 🚀 Quick Start
 
-### 1. View Directly
-Simply open `index.html` in any modern web browser:
+### 1. View Locally
+Simply open `index.html` in your web browser:
 ```powershell
 Start-Process index.html
 ```
 
-### 2. Local Live Server (Optional)
-If you have Python or Node installed:
-
-**Python**:
-```bash
-python -m http.server 3000
+### 2. Local Live Server
+Run the included PowerShell static server:
+```powershell
+powershell -ExecutionPolicy Bypass -File serve.ps1
 ```
-
-**Node / npx**:
+Or with Python:
 ```bash
-npx serve .
+python -m http.server 8080
 ```
-Then open `http://localhost:3000` in your browser.
-
----
-
-## 🛠️ Customization
-
-1. **Personal Information**: Open [index.html](index.html) and search for `Alex Morgan` to replace with your name, bio, social media handles, and email.
-2. **Projects**: Edit the project cards in [index.html](index.html) and their corresponding case study details in [script.js](script.js) under `projectData`.
-3. **Skills**: Adjust proficiency percentages and descriptions in the `#skills` section of [index.html](index.html).
-4. **Color Palette**: Modify the CSS variables in [style.css](style.css) under `:root` to customize accent colors, glow effects, or background shades.
+Then visit `http://localhost:8080`.
 
 ---
 
 ## 📄 License
-MIT License © 2026. Free to use and customize for personal portfolios.
+MIT License © 2026 Sahil Singh.

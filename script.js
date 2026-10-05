@@ -1,5 +1,6 @@
 /**
- * Alex Morgan Portfolio - Interactive Functionality & Logic
+ * Sahil Singh Portfolio - Interactive Functionality & AI Playground Logic
+ * B.Tech in Artificial Intelligence & Machine Learning (AIML)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,45 +11,45 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const typewriterElement = document.getElementById('typewriterText');
   const roles = [
-    'Senior Full-Stack Engineer',
-    'Cloud Architecture Specialist',
-    'Creative Web Developer & Designer',
-    'High-Performance Systems Builder'
+    'B.Tech AI & ML Undergrad (2026)',
+    'Deep Learning & Vision Practitioner',
+    'Generative AI & LLM Systems Builder',
+    'PyTorch & Low-Latency MLOps Specialist'
   ];
 
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  let typingSpeed = 90;
+  let typingSpeed = 80;
 
   function typeRole() {
+    if (!typewriterElement) return;
     const currentRole = roles[roleIndex];
 
     if (isDeleting) {
       typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
       charIndex--;
-      typingSpeed = 45;
+      typingSpeed = 40;
     } else {
       typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
       charIndex++;
-      typingSpeed = 90;
+      typingSpeed = 80;
     }
 
     if (!isDeleting && charIndex === currentRole.length) {
-      // Pause at full word
       typingSpeed = 2200;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
-      typingSpeed = 400;
+      typingSpeed = 450;
     }
 
     setTimeout(typeRole, typingSpeed);
   }
 
   if (typewriterElement) {
-    setTimeout(typeRole, 600);
+    setTimeout(typeRole, 500);
   }
 
   // ==========================================
@@ -80,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const htmlRoot = document.documentElement;
 
-  // Initialize theme from storage or system preference
-  const savedTheme = localStorage.getItem('am_portfolio_theme');
+  const savedTheme = localStorage.getItem('sahil_portfolio_theme');
   if (savedTheme) {
     htmlRoot.setAttribute('data-theme', savedTheme);
   } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const currentTheme = htmlRoot.getAttribute('data-theme') || 'dark';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       htmlRoot.setAttribute('data-theme', newTheme);
-      localStorage.setItem('am_portfolio_theme', newTheme);
+      localStorage.setItem('sahil_portfolio_theme', newTheme);
       showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'info');
     });
   }
@@ -106,18 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
-    // Header shadow & height compression
     if (window.scrollY > 30) {
       siteHeader.classList.add('scrolled');
     } else {
       siteHeader.classList.remove('scrolled');
     }
 
-    // Scroll spy
     let scrollY = window.pageYOffset;
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
+      const sectionTop = current.offsetTop - 130;
       const sectionId = current.getAttribute('id');
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -153,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (
         mobileDrawer.classList.contains('open') &&
@@ -177,13 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateMetrics() {
     metricValues.forEach(counter => {
       const target = parseInt(counter.getAttribute('data-target'), 10);
-      const duration = 1800; // ms
+      const duration = 1600;
       const startTime = performance.now();
 
       function updateCounter(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Ease-out expo
         const easeVal = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
         const currentCount = Math.floor(easeVal * target);
 
@@ -208,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
           animateMetrics();
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.25 });
 
     statsObserver.observe(statsSection);
   }
@@ -243,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = card.getAttribute('data-category');
         if (tab === 'all' || category === tab) {
           card.classList.remove('hidden');
-          // Re-trigger animation
           const bar = card.querySelector('.progress-bar');
           if (bar) {
             const targetWidth = bar.style.getPropertyValue('--progress');
@@ -280,100 +275,445 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 9. Interactive Case Study Modal
+  // 9. Interactive AI Playground Demo Logic
+  // ==========================================
+  const playgroundTabs = document.querySelectorAll('.playground-tab-btn');
+  const playgroundPanels = document.querySelectorAll('.playground-tab-content');
+
+  playgroundTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      playgroundTabs.forEach(b => b.classList.remove('active'));
+      playgroundPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-tab');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        if (targetId === 'synapse-demo' && !synapseInitialized) {
+          initSynapseCanvas();
+        }
+      }
+    });
+  });
+
+  // AI Sentiment & Intent Inference Demo
+  const aiDemoInput = document.getElementById('aiDemoInput');
+  const runAiInferenceBtn = document.getElementById('runAiInferenceBtn');
+  const clearAiInputBtn = document.getElementById('clearAiInputBtn');
+  const presetPills = document.querySelectorAll('.preset-pill');
+
+  const teleTokens = document.getElementById('teleTokens');
+  const teleLatency = document.getElementById('teleLatency');
+  const teleConfidence = document.getElementById('teleConfidence');
+
+  const probPosNum = document.getElementById('probPosNum');
+  const probPosBar = document.getElementById('probPosBar');
+  const probAnaNum = document.getElementById('probAnaNum');
+  const probAnaBar = document.getElementById('probAnaBar');
+  const probCritNum = document.getElementById('probCritNum');
+  const probCritBar = document.getElementById('probCritBar');
+  const tokenChipsContainer = document.getElementById('tokenChipsContainer');
+
+  presetPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const text = pill.getAttribute('data-text');
+      if (aiDemoInput) {
+        aiDemoInput.value = text;
+        runNeuralInference();
+      }
+    });
+  });
+
+  if (clearAiInputBtn && aiDemoInput) {
+    clearAiInputBtn.addEventListener('click', () => {
+      aiDemoInput.value = '';
+      aiDemoInput.focus();
+    });
+  }
+
+  function runNeuralInference() {
+    const text = (aiDemoInput ? aiDemoInput.value : '').trim();
+    if (!text) {
+      showToast('Please type some text or click a prompt pill.', 'error');
+      return;
+    }
+
+    if (runAiInferenceBtn) {
+      runAiInferenceBtn.disabled = true;
+      runAiInferenceBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Processing Tensors...';
+    }
+
+    // Tokenize text into simulated BPE tokens
+    const words = text.split(/\s+/).filter(Boolean);
+    const subwords = ['[CLS]'];
+    words.forEach(w => {
+      if (w.length > 7) {
+        subwords.push(w.substring(0, 4));
+        subwords.push('##' + w.substring(4));
+      } else {
+        subwords.push(w);
+      }
+    });
+    subwords.push('[SEP]');
+
+    setTimeout(() => {
+      // Analyze text semantics
+      const lower = text.toLowerCase();
+      let posScore = 30;
+      let anaScore = 50;
+      let critScore = 20;
+
+      if (lower.includes('accuracy') || lower.includes('breakthrough') || lower.includes('achieved') || lower.includes('optimal') || lower.includes('success') || lower.includes('converged') || lower.includes('amazing')) {
+        posScore = 94;
+        anaScore = 78;
+        critScore = 4;
+      } else if (lower.includes('cuda') || lower.includes('error') || lower.includes('crash') || lower.includes('bug') || lower.includes('fail') || lower.includes('oom')) {
+        critScore = 92;
+        anaScore = 65;
+        posScore = 6;
+      } else {
+        anaScore = 88;
+        posScore = 62;
+        critScore = 18;
+      }
+
+      // Latency simulation (8ms - 18ms)
+      const latency = (10 + Math.random() * 6).toFixed(1);
+      const conf = Math.max(posScore, anaScore, critScore);
+
+      if (teleTokens) teleTokens.textContent = subwords.length;
+      if (teleLatency) teleLatency.textContent = `${latency} ms`;
+      if (teleConfidence) teleConfidence.textContent = `${conf}.8%`;
+
+      if (probPosNum && probPosBar) {
+        probPosNum.textContent = `${posScore}%`;
+        probPosBar.style.width = `${posScore}%`;
+      }
+      if (probAnaNum && probAnaBar) {
+        probAnaNum.textContent = `${anaScore}%`;
+        probAnaBar.style.width = `${anaScore}%`;
+      }
+      if (probCritNum && probCritBar) {
+        probCritNum.textContent = `${critScore}%`;
+        probCritBar.style.width = `${critScore}%`;
+      }
+
+      // Render token chips
+      if (tokenChipsContainer) {
+        tokenChipsContainer.innerHTML = '';
+        subwords.slice(0, 16).forEach(token => {
+          const chip = document.createElement('span');
+          chip.className = 'token-chip';
+          chip.textContent = token;
+          tokenChipsContainer.appendChild(chip);
+        });
+        if (subwords.length > 16) {
+          const more = document.createElement('span');
+          more.className = 'token-chip';
+          more.textContent = `+${subwords.length - 16} more`;
+          tokenChipsContainer.appendChild(more);
+        }
+      }
+
+      if (runAiInferenceBtn) {
+        runAiInferenceBtn.disabled = false;
+        runAiInferenceBtn.innerHTML = '<i class="ri-play-circle-line"></i> Run Neural Inference';
+      }
+
+      showToast(`Inference Complete in ${latency}ms (Confidence: ${conf}%)`, 'success');
+    }, 450);
+  }
+
+  if (runAiInferenceBtn) {
+    runAiInferenceBtn.addEventListener('click', runNeuralInference);
+  }
+
+  // Synapse Canvas Visualizer
+  let synapseInitialized = false;
+  let canvasAnimId = null;
+
+  function initSynapseCanvas() {
+    const canvas = document.getElementById('synapseCanvas');
+    if (!canvas) return;
+    synapseInitialized = true;
+
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+
+    // Define 4 layers: Input(4), Hidden1(7), Hidden2(7), Output(3)
+    const layerSizes = [4, 7, 7, 3];
+    const layers = [];
+    const layerSpacing = width / (layerSizes.length + 1);
+
+    layerSizes.forEach((size, lIndex) => {
+      const x = (lIndex + 1) * layerSpacing;
+      const nodes = [];
+      const nodeSpacing = height / (size + 1);
+      for (let n = 0; n < size; n++) {
+        nodes.push({
+          x: x,
+          y: (n + 1) * nodeSpacing,
+          radius: 9,
+          energy: Math.random()
+        });
+      }
+      layers.push(nodes);
+    });
+
+    // Create synapse pulses
+    const pulses = [];
+    function spawnPulse(lIndex, fromNode, toNode) {
+      pulses.push({
+        x: fromNode.x,
+        y: fromNode.y,
+        startX: fromNode.x,
+        startY: fromNode.y,
+        targetX: toNode.x,
+        targetY: toNode.y,
+        progress: 0,
+        speed: 0.02 + Math.random() * 0.015,
+        color: lIndex === 0 ? '#00f2fe' : lIndex === 1 ? '#8b5cf6' : '#ec4899'
+      });
+    }
+
+    // Interactive button: stimulate
+    const stimulateBtn = document.getElementById('stimulatePulseBtn');
+    if (stimulateBtn) {
+      stimulateBtn.addEventListener('click', () => {
+        // Trigger pulses across all layers
+        for (let l = 0; l < layers.length - 1; l++) {
+          const current = layers[l];
+          const next = layers[l + 1];
+          current.forEach(cNode => {
+            const pick = next[Math.floor(Math.random() * next.length)];
+            spawnPulse(l, cNode, pick);
+          });
+        }
+        showToast('Propagated Forward Activation Pulse through Synapses!', 'info');
+      });
+    }
+
+    // Periodic spontaneous firing
+    setInterval(() => {
+      if (pulses.length < 25) {
+        const l = Math.floor(Math.random() * (layers.length - 1));
+        const from = layers[l][Math.floor(Math.random() * layers[l].length)];
+        const to = layers[l + 1][Math.floor(Math.random() * layers[l + 1].length)];
+        spawnPulse(l, from, to);
+      }
+    }, 280);
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw synapse connections
+      for (let l = 0; l < layers.length - 1; l++) {
+        const current = layers[l];
+        const next = layers[l + 1];
+
+        current.forEach(c => {
+          next.forEach(n => {
+            ctx.beginPath();
+            ctx.moveTo(c.x, c.y);
+            ctx.lineTo(n.x, n.y);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          });
+        });
+      }
+
+      // Update and draw pulses
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        const p = pulses[i];
+        p.progress += p.speed;
+        p.x = p.startX + (p.targetX - p.startX) * p.progress;
+        p.y = p.startY + (p.targetY - p.startY) * p.progress;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        if (p.progress >= 1) {
+          pulses.splice(i, 1);
+        }
+      }
+
+      // Draw neuron nodes
+      layers.forEach((layer, lIdx) => {
+        layer.forEach(node => {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+          
+          let fillColor = '#131724';
+          let strokeColor = '#00f2fe';
+          if (lIdx === 1) strokeColor = '#6366f1';
+          if (lIdx === 2) strokeColor = '#a855f7';
+          if (lIdx === 3) strokeColor = '#ec4899';
+
+          ctx.fillStyle = fillColor;
+          ctx.fill();
+          ctx.lineWidth = 2.5;
+          ctx.strokeStyle = strokeColor;
+          ctx.stroke();
+
+          // Inner glow
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+          ctx.fillStyle = strokeColor;
+          ctx.fill();
+        });
+      });
+
+      canvasAnimId = requestAnimationFrame(draw);
+    }
+
+    draw();
+  }
+
+  // ==========================================
+  // 10. Interactive Project Case Study Modal
   // ==========================================
   const projectData = {
-    'aura-ai': {
-      title: 'AURA — Enterprise AI Predictive Analytics Engine',
-      category: 'AI & Data Intelligence Platform',
-      image: 'assets/project1-aura-ai.jpg',
-      summary: 'AURA is a high-throughput, enterprise-grade AI analytics platform designed to aggregate metrics from over 20,000 edge IoT devices and generate real-time predictive health indices using PyTorch and FastAPI microservices.',
+    'neurovision': {
+      title: 'NeuroVision — Thoracic Pathology AI & Grad-CAM Visualizer',
+      category: 'Medical Computer Vision & Explainable AI',
+      image: 'assets/project1-neurovision.jpg',
+      summary: 'NeuroVision is a multimodal diagnostic computer vision suite designed to detect 14 distinct chest pathologies from radiography scans. It features custom Vision Transformer (ViT) and DenseNet-121 backbones paired with real-time Grad-CAM interpretability heatmaps, empowering clinicians with sub-25ms diagnosis verification.',
       challenges: [
-        'Ingesting over 50,000 telemetry events per second without dropping message frames.',
-        'Visualizing multi-dimensional neural network forecast confidence bands at 60 FPS in modern browsers.',
-        'Providing zero-latency failover across multi-region Kubernetes deployments.'
+        'Mitigating extreme class imbalance across rare thoracic conditions (e.g. pneumothorax vs. cardiomegaly).',
+        'Generating clinically faithful gradient-weighted class activation heatmaps (Grad-CAM) at high resolution.',
+        'Exporting heavy PyTorch model checkpoints to lightweight runtimes for deployment on hospital edge servers.'
       ],
       solutions: [
-        'Engineered an event-driven ingestion pipeline utilizing Apache Kafka & Redis Pub/Sub buffers.',
-        'Built custom Canvas & WebGL data visualizers reducing memory overhead by 68%.',
-        'Implemented automated predictive anomaly alerts via WebSockets with sub-80ms client propagation.'
+        'Implemented Focal Loss and class-weighted contrastive pre-training to boost sensitivity on rare pathologies.',
+        'Engineered an automated ONNX Runtime and TensorRT FP16 quantization pipeline cutting latency by 62%.',
+        'Built an asynchronous FastAPI microservice with WebSockets streaming progressive diagnostic heatmaps.'
       ],
       metrics: [
-        { num: '4.1M', label: 'Predictions / Month' },
-        { num: '96.2%', label: 'Model Accuracy' },
-        { num: '45ms', label: 'Query Latency' }
+        { num: '98.4%', label: 'ROC-AUC Score' },
+        { num: '14 ms', label: 'Inference Latency' },
+        { num: '14 Classes', label: 'Thoracic Pathologies' }
       ],
-      demoLink: '#',
-      githubLink: 'https://github.com'
+      demoLink: '#playground',
+      githubLink: 'https://github.com/gunjan-code284'
     },
-    'apex-wallet': {
-      title: 'Apex — Institutional Web3 & Crypto Portfolio Terminal',
-      category: 'FinTech & Institutional Crypto',
+    'nexusrag': {
+      title: 'NexusRAG — Autonomous Multi-Agent Knowledge Retrieval Engine',
+      category: 'Generative AI, LLMs & Vector Retrieval',
+      image: 'assets/project2-nexusrag.jpg',
+      summary: 'NexusRAG is an enterprise-ready agentic RAG system built on top of quantized open-weights models (Llama-3-8B). It leverages hybrid dense/sparse vector retrieval (BM25 + ChromaDB embeddings) and Cohere cross-encoder reranking to answer complex technical queries with high factual grounding.',
+      challenges: [
+        'Overcoming hallucinations and citation inaccuracies in large technical document corpora.',
+        'Balancing retrieval recall and low-latency token streaming for live conversational chats.',
+        'Managing memory footprint of 8B parameter models on single GPU instances.'
+      ],
+      solutions: [
+        'Integrated multi-query expansion and Cohere semantic reranking, boosting retrieval precision by 34%.',
+        'Implemented 4-bit GGUF quantization with vLLM PagedAttention serving sub-18ms time-to-first-token (TTFT).',
+        'Added dynamic context window pruning and automated citation hallucination guardrails.'
+      ],
+      metrics: [
+        { num: '34%', label: 'Precision Boost' },
+        { num: '<18ms', label: 'Time To First Token' },
+        { num: '7.8M', label: 'Vector Embeddings' }
+      ],
+      demoLink: '#playground',
+      githubLink: 'https://github.com/gunjan-code284'
+    },
+    'deepdrive': {
+      title: 'DeepDrive-RL — Sensor Fusion Autonomous Driving Agent',
+      category: 'Deep Reinforcement Learning & Robotics',
+      image: 'assets/project3-deepdrive.jpg',
+      summary: 'DeepDrive-RL is an end-to-end deep reinforcement learning policy trained in the CARLA simulator. It fuses 3D LiDAR point clouds and semantic segmentation camera masks into a unified latent bird-eye representation, successfully steering, braking, and avoiding collisions in dense urban environments.',
+      challenges: [
+        'Reward shaping instability and sparse rewards in complex multi-lane highway scenarios.',
+        'Fusing multi-sensor asynchronous streams (3D LiDAR + RGB camera) without temporal latency.',
+        'Sim-to-real domain gap and erratic pedestrian behavior in unpredictable weather.'
+      ],
+      solutions: [
+        'Trained using Soft Actor-Critic (SAC) and Proximal Policy Optimization (PPO) with entropy regularization.',
+        'Architected a PointNet-based LiDAR spatial encoder fused with a ResNet vision backbone.',
+        'Applied aggressive data augmentation including simulated rain, fog, and sensor occlusion.'
+      ],
+      metrics: [
+        { num: '99.2%', label: 'Collision-Free Safety' },
+        { num: '30 FPS', label: 'Simulation Steer Loop' },
+        { num: '1.2M', label: 'Simulated Miles' }
+      ],
+      demoLink: '#projects',
+      githubLink: 'https://github.com/gunjan-code284'
+    },
+    'croppulse': {
+      title: 'CropPulse — Hyperspectral Drone Crop Pathology AI',
+      category: 'Computer Vision & Edge Agriculture',
+      image: 'assets/project4-croppulse.jpg',
+      summary: 'CropPulse is a precision agriculture diagnostic platform engineered to detect 38+ plant diseases and pest infestations using aerial drone multispectral imagery and mobile phone snapshots. Designed specifically for offline edge execution in remote farming communities.',
+      challenges: [
+        'Operating in remote rural areas with zero internet connectivity and budget Android hardware.',
+        'Differentiating subtle visual blight symptoms across overlapping plant leaves in varied lighting.',
+        'Rapid geo-tagging and blight propagation velocity prediction.'
+      ],
+      solutions: [
+        'Trained dual YOLOv8 for lesion bounding boxes and EfficientNet-B4 for multi-label fungal classification.',
+        'Exported to INT8 TFLite & ONNX runtimes running entirely in-browser and offline on smartphones.',
+        'Awarded First Prize & National Top 5 Finalist for societal impact and farmer usability.'
+      ],
+      metrics: [
+        { num: '98.1%', label: 'F1 Classification' },
+        { num: '38+', label: 'Crop Pathologies' },
+        { num: 'Offline', label: 'Zero-Cloud Inference' }
+      ],
+      demoLink: '#projects',
+      githubLink: 'https://github.com/gunjan-code284'
+    },
+    'alphaforecaster': {
+      title: 'AlphaForecaster — High-Frequency Order Book ML',
+      category: 'Time-Series & Financial Machine Learning',
       image: 'assets/project2-crypto-wallet.jpg',
-      summary: 'Apex is a cross-platform institutional trading terminal and crypto wealth management hub. It provides multi-chain balance monitoring, automated tax reporting, and high-frequency order routing with hardware-level security.',
+      summary: 'AlphaForecaster utilizes Temporal Fusion Transformers (TFT) with multi-head attention to analyze limit order book microstructure imbalances and predict short-horizon volatility spikes with sub-10ms latency.',
       challenges: [
-        'Synchronizing blockchain transaction state across Ethereum, Solana, and Bitcoin without stale balances.',
-        'Passing strict SOC2 Type II compliance and bank-grade biometric enclave cryptographic requirements.',
-        'Handling high network congestion during market flash volatility events.'
+        'Processing nanosecond-level market ticks without backpressure or dropping frames.',
+        'Non-stationarity and extreme market noise in high-frequency trading regimes.'
       ],
       solutions: [
-        'Developed custom indexing nodes in Go to stream finalized blockchain states to clients in real-time.',
-        'Integrated WebAuthn biometric authentication with secure enclave key generation.',
-        'Architected a distributed rate limiter and automatic RPC node fallback cluster.'
+        'Engineered an in-memory streaming consumer buffer with Redis Streams and C++ bindings.',
+        'Applied bidirectional LSTM and Temporal Transformer heads with quantile loss calibration.'
       ],
       metrics: [
-        { num: '$125M+', label: 'Volume Processed' },
-        { num: '99.99%', label: 'Gateway Uptime' },
-        { num: '<120ms', label: 'Order Execution' }
+        { num: '<10ms', label: 'Prediction Latency' },
+        { num: '72.4%', label: 'Directional Accuracy' },
+        { num: '100k+', label: 'Ticks / Second' }
       ],
-      demoLink: '#',
-      githubLink: 'https://github.com'
+      demoLink: '#projects',
+      githubLink: 'https://github.com/gunjan-code284'
     },
-    'cloud-ops': {
-      title: 'C-Ops — Multi-Region Kubernetes Telemetry & Topology Mesh',
-      category: 'DevOps & Cloud Observability',
-      image: 'assets/project3-cloud-ops.jpg',
-      summary: 'C-Ops is an observability control plane mapping global microservice communication, pod health, and latency bottlenecks across hybrid multi-cloud AWS and bare-metal Kubernetes clusters.',
-      challenges: [
-        'Rendering dynamic, real-time node topology networks with thousands of interconnected services.',
-        'Correlating distributed OpenTelemetry traces with metric spikes without saturating network bandwidth.',
-        'Instant disaster remediation triggers to divert live customer traffic in under 5 seconds.'
-      ],
-      solutions: [
-        'Built a custom GPU-accelerated force-directed graph renderer using D3.js & WebGL shaders.',
-        'Implemented Prometheus histogram aggregation with dynamic sampling rate adapters.',
-        'Created automated eBPF network packet probes to detect packet drops and latency spikes proactively.'
-      ],
-      metrics: [
-        { num: '54+', label: 'Kubernetes Nodes' },
-        { num: '12ms', label: 'Avg Telemetry Latency' },
-        { num: '28%', label: 'Cloud Cost Saved' }
-      ],
-      demoLink: '#',
-      githubLink: 'https://github.com'
-    },
-    'cybernex-3d': {
-      title: 'Cybernex — 3D Interactive Spatial Web Experience',
-      category: 'Creative Technology & WebGL',
+    'synthvoice': {
+      title: 'SynthVoice — Real-Time Multilingual Neural Speech AI',
+      category: 'Speech & Audio Deep Learning',
       image: 'assets/project4-cybernex-3d.jpg',
-      summary: 'Cybernex is an experiential web showcase created for an avant-garde digital arts agency. It blends custom Three.js GLSL shaders, kinetic typography, and reactive spatial audio to redefine brand presentation online.',
+      summary: 'SynthVoice is a conversational speech recognition and neural synthesis pipeline fine-tuned on regional Indian accents. Combines a modified Whisper acoustic model with a FastSpeech2 vocoder for sub-120ms conversational audio latency.',
       challenges: [
-        'Maintaining a locked 60 FPS performance across lower-tier mobile hardware and high-res Retina displays.',
-        'Streaming heavy 3D GLTF models and normal maps without causing initial load delays.',
-        'Synchronizing web audio synthesized soundscapes with interactive cursor physics.'
+        'High Word Error Rate (WER) on code-mixed Hinglish and regional dialects.',
+        'Audio streaming buffer latency on standard mobile connections.'
       ],
       solutions: [
-        'Created custom level-of-detail (LOD) shaders and texture compression using Draco & KTX2.',
-        'Implemented a progressive asset streaming pipeline with instant interactive placeholder geometry.',
-        'Connected the Web Audio API oscillator nodes to mouse velocity vectors for responsive sound feedback.'
+        'Fine-tuned OpenAI Whisper with LoRA on 400+ hours of localized regional Indian speech datasets.',
+        'Implemented WebRTC voice streaming buffers directly into browser audio decoders.'
       ],
       metrics: [
-        { num: '60 FPS', label: 'Locked Framerate' },
-        { num: 'Awwwards', label: 'Site of the Day' },
-        { num: '< 1.4s', label: 'First Contentful Paint' }
+        { num: '7.8%', label: 'Word Error Rate' },
+        { num: '<120ms', label: 'Voice Latency' },
+        { num: '4 Languages', label: 'Supported Accents' }
       ],
-      demoLink: '#',
-      githubLink: 'https://github.com'
+      demoLink: '#projects',
+      githubLink: 'https://github.com/gunjan-code284'
     }
   };
 
@@ -412,8 +752,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>
 
       <div class="modal-actions">
-        <a href="${data.demoLink}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          <i class="ri-external-link-line"></i> Launch Live System
+        <a href="${data.demoLink}" class="btn btn-primary">
+          <i class="ri-sparkling-line"></i> Launch System Demo
         </a>
         <a href="${data.githubLink}" class="btn btn-glass" target="_blank" rel="noopener noreferrer">
           <i class="ri-github-fill"></i> View GitHub Repo
@@ -459,14 +799,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 10. Copy Email to Clipboard
+  // 11. Interactive ATS Resume Modal Logic
+  // ==========================================
+  const resumeModal = document.getElementById('resumeModal');
+  const viewResumeNavBtn = document.getElementById('viewResumeNavBtn');
+  const viewResumeMobileBtn = document.getElementById('viewResumeMobileBtn');
+  const heroResumeBtn = document.getElementById('heroResumeBtn');
+  const resumeModalCloseBtn = document.getElementById('resumeModalCloseBtn');
+  const printResumeBtn = document.getElementById('printResumeBtn');
+
+  function openResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.add('open');
+    resumeModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.remove('open');
+    resumeModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (viewResumeNavBtn) viewResumeNavBtn.addEventListener('click', openResumeModal);
+  if (viewResumeMobileBtn) viewResumeMobileBtn.addEventListener('click', openResumeModal);
+  if (heroResumeBtn) heroResumeBtn.addEventListener('click', openResumeModal);
+  if (resumeModalCloseBtn) resumeModalCloseBtn.addEventListener('click', closeResumeModal);
+
+  if (printResumeBtn) {
+    printResumeBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  if (resumeModal) {
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) {
+        closeResumeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && resumeModal.classList.contains('open')) {
+        closeResumeModal();
+      }
+    });
+  }
+
+  // ==========================================
+  // 12. Copy Email to Clipboard
   // ==========================================
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      const email = 'gunjan.dev@example.com';
+      const email = 'sahilsingh.aiml26@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
-        showToast('Email address copied to clipboard!', 'success');
+        showToast('Email (sahilsingh.aiml26@gmail.com) copied to clipboard!', 'success');
       }).catch(() => {
         showToast('Could not copy email automatically.', 'error');
       });
@@ -474,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 11. Contact Form Real-Time Validation & Submit
+  // 13. Contact Form Real-Time Validation & Submit
   // ==========================================
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -495,10 +884,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function clearErrors() {
-      nameError.textContent = '';
-      emailError.textContent = '';
-      subjectError.textContent = '';
-      messageError.textContent = '';
+      if (nameError) nameError.textContent = '';
+      if (emailError) emailError.textContent = '';
+      if (subjectError) subjectError.textContent = '';
+      if (messageError) messageError.textContent = '';
     }
 
     contactForm.addEventListener('submit', (e) => {
@@ -508,7 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let isValid = true;
 
       if (!nameInput.value.trim()) {
-        nameError.textContent = 'Please enter your name.';
+        nameError.textContent = 'Please enter your name or organization.';
         isValid = false;
       }
 
@@ -526,35 +915,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!messageInput.value.trim()) {
-        messageError.textContent = 'Please write a brief message.';
+        messageError.textContent = 'Please write a message.';
         isValid = false;
-      } else if (messageInput.value.trim().length < 15) {
-        messageError.textContent = 'Message should be at least 15 characters long.';
+      } else if (messageInput.value.trim().length < 10) {
+        messageError.textContent = 'Message should be at least 10 characters.';
         isValid = false;
       }
 
       if (!isValid) return;
 
-      // Show loading spinner
       submitBtn.classList.add('loading');
       submitBtn.disabled = true;
 
-      // Simulate asynchronous form delivery
       setTimeout(() => {
         submitBtn.classList.remove('loading');
         submitBtn.disabled = false;
         contactForm.reset();
 
         showToast(
-          'Message Sent Successfully! Gunjan will get back to you within 24 hours.',
+          'Message Delivered! Sahil Singh will review and get back to you shortly.',
           'success'
         );
-      }, 1200);
+      }, 1000);
     });
   }
 
   // ==========================================
-  // 12. Toast Notification Utility
+  // 14. Toast Notification Utility
   // ==========================================
   function showToast(message, type = 'info') {
     const container = document.getElementById('toastContainer');
@@ -570,7 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
       titleText = 'Success';
     } else if (type === 'error') {
       iconClass = 'ri-error-warning-line';
-      titleText = 'Error';
+      titleText = 'Attention';
     }
 
     toast.innerHTML = `
@@ -583,12 +970,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.appendChild(toast);
 
-    // Trigger transition
     requestAnimationFrame(() => {
       toast.classList.add('show');
     });
 
-    // Auto remove
     setTimeout(() => {
       toast.classList.remove('show');
       setTimeout(() => {
@@ -600,7 +985,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 13. Dynamic Year & Back To Top
+  // 15. Dynamic Year & Back To Top
   // ==========================================
   const currentYearSpan = document.getElementById('currentYear');
   if (currentYearSpan) {

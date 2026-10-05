@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gunjan — Senior Full-Stack Engineer & Creative Technologist. Specializing in high-performance web applications, cloud architecture, and immersive UI/UX.">
-  <meta name="keywords" content="Software Engineer, Full-Stack Developer, Web Development, React, Node.js, Cloud, Portfolio">
-  <meta name="author" content="Gunjan">
-  <title>Gunjan | Senior Full-Stack Engineer & Creative Technologist</title>
+  <meta name="description" content="Sahil Singh — B.Tech Artificial Intelligence & Machine Learning (AIML) Student, Deep Learning Researcher & Full-Stack AI Engineer. Specializing in Computer Vision, LLMs, and High-Performance MLOps.">
+  <meta name="keywords" content="Sahil Singh, BTech AIML, Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, PyTorch, LLMs, RAG, Student Portfolio, AI Engineer">
+  <meta name="author" content="Sahil Singh">
+
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sahil Singh | B.Tech AIML • AI Engineer & Deep Learning Practitioner">
+  <meta property="og:description" content="Portfolio of Sahil Singh: B.Tech Artificial Intelligence & Machine Learning student building cutting-edge Computer Vision, LLM agents, and low-latency neural architectures.">
+  <meta property="og:image" content="assets/sahil_portrait.jpg">
+  
+  <title>Sahil Singh | B.Tech AI & Machine Learning • AI Engineer & Researcher</title>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Remix Icon CDN -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
@@ -24,7 +31,7 @@
 </head>
 <body>
 
-  <!-- Ambient Dynamic Background -->
+  <!-- Ambient Dynamic Background Glows -->
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
   <div class="ambient-glow glow-3"></div>
@@ -35,18 +42,20 @@
   <!-- Header & Navigation -->
   <header class="site-header" id="siteHeader">
     <div class="container header-container">
-      <a href="#home" class="logo" aria-label="Gunjan Home">
-        <span class="logo-symbol">&lt;G/&gt;</span>
-        <span class="logo-text">Gunjan<span class="accent-dot">.</span></span>
+      <a href="#home" class="logo" aria-label="Sahil Singh Home">
+        <span class="logo-symbol">&lt;Sahil.AI/&gt;</span>
+        <span class="logo-text">Sahil<span class="accent-dot">.</span>Singh</span>
       </a>
 
       <nav class="nav-desktop" id="navDesktop" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#about" class="nav-link">About & Academics</a></li>
+          <li><a href="#skills" class="nav-link">Tech Arsenal</a></li>
+          <li><a href="#playground" class="nav-link">AI Playground</a></li>
+          <li><a href="#projects" class="nav-link">AI Projects</a></li>
+          <li><a href="#experience" class="nav-link">Hackathons & Exp</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -58,11 +67,11 @@
           <i class="ri-moon-line icon-moon"></i>
         </button>
 
-        <!-- Resume Button -->
-        <a href="#contact" class="btn btn-outline btn-sm resume-btn">
-          <i class="ri-file-download-line"></i>
-          <span>Get Resume</span>
-        </a>
+        <!-- View Resume Modal Trigger -->
+        <button class="btn btn-outline btn-sm resume-btn" id="viewResumeNavBtn">
+          <i class="ri-file-text-line"></i>
+          <span>View CV</span>
+        </button>
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -79,14 +88,19 @@
     <div class="drawer-content">
       <ul class="mobile-nav-links">
         <li><a href="#home" class="mobile-nav-link">Home</a></li>
-        <li><a href="#about" class="mobile-nav-link">About</a></li>
-        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
-        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#about" class="mobile-nav-link">About & Academics</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Tech Arsenal</a></li>
+        <li><a href="#playground" class="mobile-nav-link">AI Playground</a></li>
+        <li><a href="#projects" class="mobile-nav-link">AI Projects</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Hackathons & Exp</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
       <div class="drawer-footer">
-        <a href="#contact" class="btn btn-primary btn-full mobile-cta-btn">Let's Talk</a>
+        <button class="btn btn-outline btn-full" id="viewResumeMobileBtn" style="margin-bottom: 12px;">
+          <i class="ri-file-pdf-line"></i> View Resume / CV
+        </button>
+        <a href="#contact" class="btn btn-primary btn-full mobile-cta-btn">Connect With Sahil</a>
       </div>
     </div>
   </div>
@@ -98,45 +112,52 @@
         <div class="hero-content">
           <div class="hero-badge">
             <span class="pulse-dot"></span>
-            <span>Available for innovative projects & roles</span>
+            <span>B.Tech AI & ML Undergrad ('26) • Open for AI/ML Roles & Research</span>
           </div>
 
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Gunjan</span>
+            Hi, I'm <span class="gradient-text">Sahil Singh</span>
             <span class="typewriter-container">
               <span class="typewriter-text" id="typewriterText"></span><span class="typewriter-cursor">|</span>
             </span>
           </h1>
 
           <p class="hero-description">
-            I engineer scalable, ultra-fast digital architectures and design captivating, pixel-perfect user experiences. Turning complex engineering problems into elegant digital products.
+            Passionate <strong>B.Tech Artificial Intelligence & Machine Learning (AIML)</strong> student engineering production-ready deep learning systems. Specialized in <strong>Computer Vision, LLM/RAG Architectures</strong>, and low-latency edge deployment with mathematical rigor.
           </p>
 
           <div class="hero-cta-group">
             <a href="#projects" class="btn btn-primary btn-lg">
-              <span>View Projects</span>
-              <i class="ri-arrow-right-up-line"></i>
+              <span>Explore AI Models</span>
+              <i class="ri-sparkling-fill"></i>
             </a>
-            <a href="#contact" class="btn btn-glass btn-lg">
-              <span>Let's Connect</span>
-              <i class="ri-chat-1-line"></i>
+            <a href="#playground" class="btn btn-glass btn-lg">
+              <span>Try Live AI Demo</span>
+              <i class="ri-terminal-box-line"></i>
             </a>
+            <button class="btn btn-outline btn-lg" id="heroResumeBtn">
+              <i class="ri-file-download-line"></i>
+              <span>View Resume</span>
+            </button>
           </div>
 
           <!-- Social Links -->
           <div class="hero-socials">
-            <span class="social-label">Follow me on</span>
+            <span class="social-label">Connect with me</span>
             <div class="social-icons">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile" title="GitHub">
                 <i class="ri-github-fill"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile" title="LinkedIn">
                 <i class="ri-linkedin-fill"></i>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X / Twitter">
-                <i class="ri-twitter-x-fill"></i>
+              <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Hugging Face" title="Hugging Face">
+                <i class="ri-robot-2-line"></i>
               </a>
-              <a href="mailto:gunjan.dev@example.com" class="social-icon" aria-label="Email">
+              <a href="https://kaggle.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Kaggle Expert" title="Kaggle Profile">
+                <i class="ri-database-2-line"></i>
+              </a>
+              <a href="mailto:sahilsingh.aiml26@gmail.com" class="social-icon" aria-label="Email Sahil" title="Send Email">
                 <i class="ri-mail-send-fill"></i>
               </a>
             </div>
@@ -149,32 +170,32 @@
             <div class="profile-card-backdrop"></div>
             <div class="profile-card">
               <div class="avatar-frame">
-                <img src="assets/avatar.jpg" alt="Gunjan Portrait" class="avatar-img" width="380" height="380">
+                <img src="assets/sahil_portrait.jpg" alt="Sahil Singh - B.Tech AIML Student" class="avatar-img" width="380" height="380">
                 <div class="avatar-ring"></div>
               </div>
               
               <!-- Floating Micro-Badges -->
               <div class="floating-badge badge-top">
-                <div class="badge-icon icon-code"><i class="ri-code-s-slash-line"></i></div>
+                <div class="badge-icon icon-code"><i class="ri-brain-line"></i></div>
                 <div class="badge-info">
-                  <span class="badge-title">Clean Code</span>
-                  <span class="badge-subtitle">100% Test Coverage</span>
+                  <span class="badge-title">PyTorch & Transformers</span>
+                  <span class="badge-subtitle">State-of-the-Art Deep Learning</span>
                 </div>
               </div>
 
               <div class="floating-badge badge-bottom">
-                <div class="badge-icon icon-cloud"><i class="ri-cloud-line"></i></div>
+                <div class="badge-icon icon-cloud"><i class="ri-award-line"></i></div>
                 <div class="badge-info">
-                  <span class="badge-title">Cloud Native</span>
-                  <span class="badge-subtitle">AWS & Kubernetes</span>
+                  <span class="badge-title">SIH Finalist</span>
+                  <span class="badge-subtitle">National AI Innovation Podiums</span>
                 </div>
               </div>
 
               <div class="floating-badge badge-right">
                 <div class="badge-icon icon-speed"><i class="ri-speed-up-line"></i></div>
                 <div class="badge-info">
-                  <span class="badge-title">99+ Performance</span>
-                  <span class="badge-subtitle">Core Web Vitals</span>
+                  <span class="badge-title">Sub-18ms Inference</span>
+                  <span class="badge-subtitle">TensorRT & ONNX Runtime</span>
                 </div>
               </div>
             </div>
@@ -183,60 +204,65 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About & Academics Section -->
     <section class="section about-section" id="about">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="ri-user-smile-line"></i> About Me</span>
-          <h2 class="section-title">Driven by Curiosity, <span class="gradient-text">Engineered for Impact</span></h2>
-          <p class="section-subtitle">A brief look into my background, philosophy, and what drives my work every day.</p>
+          <span class="section-tag"><i class="ri-graduation-cap-line"></i> About Me & Academics</span>
+          <h2 class="section-title">Rooted in Mathematics, <span class="gradient-text">Engineered with Neural Networks</span></h2>
+          <p class="section-subtitle">Bridging theoretical research in deep learning with high-throughput production deployment.</p>
         </div>
 
         <div class="about-grid">
           <!-- Story Card -->
           <div class="about-card story-card glass-card">
             <div class="card-icon-header">
-              <div class="feature-icon"><i class="ri-compass-3-line"></i></div>
-              <h3>My Journey & Philosophy</h3>
+              <div class="feature-icon"><i class="ri-cpu-line"></i></div>
+              <div>
+                <h3>Sahil Singh — Academic Profile</h3>
+                <span class="academic-sub">B.Tech in Artificial Intelligence & Machine Learning (2022 — 2026)</span>
+              </div>
             </div>
             <p>
-              With over <strong>6 years of experience</strong> architecting modern digital systems, I bridge the gap between creative visual design and robust backend engineering. My work ranges from high-throughput distributed microservices to fluid, GPU-accelerated client interfaces.
+              I am an undergraduate student in <strong>B.Tech Artificial Intelligence and Machine Learning (AIML)</strong> maintaining a cumulative <strong>CGPA of 8.92 / 10.0</strong>. My core passion lies at the intersection of mathematical theory—multivariable calculus, linear algebra, stochastic optimization—and real-world AI systems engineering.
             </p>
             <p>
-              I believe great software isn't just about functionality—it is about craft, speed, accessibility, and delight. Whether scaling a Kubernetes cluster or tuning a 60fps micro-animation, I pursue perfection in every line of code.
+              Rather than treating models as opaque black boxes, I focus on the underlying mechanics: loss landscape geometry, attention entropy, model pruning, and quantization. From training Vision Transformers on edge medical datasets to building autonomous LLM agents with vector retrieval, I build AI solutions designed for measurable impact and speed.
             </p>
             
             <div class="about-tags">
-              <span class="tag">🚀 Distributed Systems</span>
-              <span class="tag">🎨 Fluid UI/UX</span>
-              <span class="tag">⚡ Performance Obsessed</span>
-              <span class="tag">🛡️ Security First</span>
+              <span class="tag">🎓 B.Tech AI & ML (2026)</span>
+              <span class="tag">📐 Linear Algebra & Calculus</span>
+              <span class="tag">⚡ PyTorch & CUDA</span>
+              <span class="tag">👁️ Computer Vision</span>
+              <span class="tag">🤖 Generative AI & RAG</span>
+              <span class="tag">🚀 MLOps & TensorRT</span>
             </div>
           </div>
 
-          <!-- Fast Highlights Cards -->
+          <!-- Academic Pillars Cards -->
           <div class="about-pillars">
             <div class="pillar-card glass-card">
-              <div class="pillar-icon"><i class="ri-cpu-line"></i></div>
+              <div class="pillar-icon"><i class="ri-eye-line"></i></div>
               <div>
-                <h4>Architectural Excellence</h4>
-                <p>Designing fault-tolerant, resilient architectures that seamlessly scale from hundreds to millions of concurrent users.</p>
+                <h4>Computer Vision & Interpretability</h4>
+                <p>Developing Vision Transformers (ViT), YOLO architectures, and Grad-CAM attention visualizers for medical pathology and edge robotics.</p>
               </div>
             </div>
 
             <div class="pillar-card glass-card">
-              <div class="pillar-icon"><i class="ri-palette-line"></i></div>
+              <div class="pillar-icon"><i class="ri-chat-voice-line"></i></div>
               <div>
-                <h4>Intuitive Product Design</h4>
-                <p>Translating complicated business logic into effortless, joyful user experiences backed by ergonomic design systems.</p>
+                <h4>Generative AI & LLM Systems</h4>
+                <p>Architecting multi-agent RAG pipelines using LangChain, quantized open-weight models (Llama 3, Mistral), and low-latency vector databases.</p>
               </div>
             </div>
 
             <div class="pillar-card glass-card">
               <div class="pillar-icon"><i class="ri-flashlight-line"></i></div>
               <div>
-                <h4>Hyper Velocity Delivery</h4>
-                <p>Rapid prototyping paired with rigorous CI/CD workflows to ship bulletproof features with uncompromised velocity.</p>
+                <h4>Edge Acceleration & MLOps</h4>
+                <p>Converting heavy PyTorch checkpoints to INT8/FP16 ONNX and TensorRT runtimes, cutting latency by up to 65% on edge GPUs.</p>
               </div>
             </div>
           </div>
@@ -246,40 +272,40 @@
         <div class="metrics-strip glass-card" id="statsSection">
           <div class="metric-item">
             <div class="metric-number-wrapper">
-              <span class="metric-value" data-target="6">0</span>
+              <span class="metric-value" data-target="15">0</span>
               <span class="metric-plus">+</span>
             </div>
-            <span class="metric-label">Years of Experience</span>
+            <span class="metric-label">AI/ML Models Deployed</span>
           </div>
 
           <div class="metric-divider"></div>
 
           <div class="metric-item">
             <div class="metric-number-wrapper">
-              <span class="metric-value" data-target="48">0</span>
+              <span class="metric-value" data-target="89">0</span>
+              <span class="metric-plus">.9%</span>
+            </div>
+            <span class="metric-label">Academic CGPA (8.92/10)</span>
+          </div>
+
+          <div class="metric-divider"></div>
+
+          <div class="metric-item">
+            <div class="metric-number-wrapper">
+              <span class="metric-value" data-target="4">0</span>
               <span class="metric-plus">+</span>
             </div>
-            <span class="metric-label">Projects Completed</span>
+            <span class="metric-label">Hackathon Awards & Podiums</span>
           </div>
 
           <div class="metric-divider"></div>
 
           <div class="metric-item">
             <div class="metric-number-wrapper">
-              <span class="metric-value" data-target="99">0</span>
-              <span class="metric-plus">%</span>
-            </div>
-            <span class="metric-label">Client Satisfaction</span>
-          </div>
-
-          <div class="metric-divider"></div>
-
-          <div class="metric-item">
-            <div class="metric-number-wrapper">
-              <span class="metric-value" data-target="150">0</span>
+              <span class="metric-value" data-target="12">0</span>
               <span class="metric-plus">k+</span>
             </div>
-            <span class="metric-label">Lines of Code</span>
+            <span class="metric-label">Community Model Downloads</span>
           </div>
         </div>
       </div>
@@ -289,169 +315,351 @@
     <section class="section skills-section" id="skills">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="ri-terminal-box-line"></i> Tech Arsenal</span>
-          <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
-          <p class="section-subtitle">Constantly updated toolkit tailored for modern web applications and cloud computing.</p>
+          <span class="section-tag"><i class="ri-terminal-box-line"></i> Technical Arsenal</span>
+          <h2 class="section-title">AI, Machine Learning & <span class="gradient-text">Software Skills</span></h2>
+          <p class="section-subtitle">Deep learning frameworks, algorithmic problem solving, and production deployment toolchains.</p>
         </div>
 
         <!-- Skill Category Tabs -->
         <div class="skills-filter-nav">
-          <button class="filter-pill active" data-skill-tab="all">All Skills</button>
-          <button class="filter-pill" data-skill-tab="frontend">Frontend</button>
-          <button class="filter-pill" data-skill-tab="backend">Backend & DB</button>
-          <button class="filter-pill" data-skill-tab="cloud">Cloud & DevOps</button>
-          <button class="filter-pill" data-skill-tab="tools">Design & Tools</button>
+          <button class="filter-pill active" data-skill-tab="all">All Arsenal</button>
+          <button class="filter-pill" data-skill-tab="deeplearning">Deep Learning & ML</button>
+          <button class="filter-pill" data-skill-tab="vision-nlp">Vision & NLP</button>
+          <button class="filter-pill" data-skill-tab="languages">Languages & Math</button>
+          <button class="filter-pill" data-skill-tab="mlops">MLOps & Cloud</button>
+          <button class="filter-pill" data-skill-tab="web">Web & Visualization</button>
         </div>
 
         <!-- Skills Grid -->
         <div class="skills-grid" id="skillsGrid">
-          <!-- Skill: React / Next.js -->
-          <div class="skill-card glass-card" data-category="frontend">
-            <div class="skill-icon-wrapper"><i class="ri-reactjs-line"></i></div>
+          <!-- Skill: PyTorch & TorchVision -->
+          <div class="skill-card glass-card" data-category="deeplearning">
+            <div class="skill-icon-wrapper"><i class="ri-fire-line"></i></div>
             <div class="skill-details">
               <div class="skill-header">
-                <span class="skill-name">React & Next.js</span>
-                <span class="skill-percent">95%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 95%;"></div>
-              </div>
-              <span class="skill-exp">SSR, Server Actions, App Router, Hooks</span>
-            </div>
-          </div>
-
-          <!-- Skill: TypeScript / JS -->
-          <div class="skill-card glass-card" data-category="frontend">
-            <div class="skill-icon-wrapper"><i class="ri-javascript-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">TypeScript / ESNext</span>
-                <span class="skill-percent">94%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 94%;"></div>
-              </div>
-              <span class="skill-exp">Generics, Strict Typing, Modular Architecture</span>
-            </div>
-          </div>
-
-          <!-- Skill: Node.js & Express -->
-          <div class="skill-card glass-card" data-category="backend">
-            <div class="skill-icon-wrapper"><i class="ri-nodejs-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">Node.js & Express</span>
-                <span class="skill-percent">90%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 90%;"></div>
-              </div>
-              <span class="skill-exp">RESTful APIs, WebSockets, Event-Driven</span>
-            </div>
-          </div>
-
-          <!-- Skill: Python / FastAPI -->
-          <div class="skill-card glass-card" data-category="backend">
-            <div class="skill-icon-wrapper"><i class="ri-code-box-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">Python & FastAPI</span>
-                <span class="skill-percent">88%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 88%;"></div>
-              </div>
-              <span class="skill-exp">AI Pipelines, Data Analytics, Async APIs</span>
-            </div>
-          </div>
-
-          <!-- Skill: PostgreSQL & Redis -->
-          <div class="skill-card glass-card" data-category="backend">
-            <div class="skill-icon-wrapper"><i class="ri-database-2-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">PostgreSQL & Redis</span>
-                <span class="skill-percent">89%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 89%;"></div>
-              </div>
-              <span class="skill-exp">Schema Modeling, Indexing, Caching Layers</span>
-            </div>
-          </div>
-
-          <!-- Skill: AWS & Cloud Infra -->
-          <div class="skill-card glass-card" data-category="cloud">
-            <div class="skill-icon-wrapper"><i class="ri-amazon-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">AWS Cloud Services</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 85%;"></div>
-              </div>
-              <span class="skill-exp">Lambda, ECS, S3, CloudFront, Terraform</span>
-            </div>
-          </div>
-
-          <!-- Skill: Docker & Kubernetes -->
-          <div class="skill-card glass-card" data-category="cloud">
-            <div class="skill-icon-wrapper"><i class="ri-box-3-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">Docker & Kubernetes</span>
-                <span class="skill-percent">87%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" style="--progress: 87%;"></div>
-              </div>
-              <span class="skill-exp">Containerization, Helm Charts, CI/CD pipelines</span>
-            </div>
-          </div>
-
-          <!-- Skill: CSS3 / UI Systems -->
-          <div class="skill-card glass-card" data-category="frontend">
-            <div class="skill-icon-wrapper"><i class="ri-paint-brush-line"></i></div>
-            <div class="skill-details">
-              <div class="skill-header">
-                <span class="skill-name">Modern CSS & Animations</span>
+                <span class="skill-name">PyTorch & TorchVision</span>
                 <span class="skill-percent">96%</span>
               </div>
               <div class="progress-track">
                 <div class="progress-bar" style="--progress: 96%;"></div>
               </div>
-              <span class="skill-exp">Custom properties, Grid/Flexbox, Keyframes</span>
+              <span class="skill-exp">Custom Autograd, DDP Distributed Training, CUDA Optimization</span>
             </div>
           </div>
 
-          <!-- Skill: Figma & Design Systems -->
-          <div class="skill-card glass-card" data-category="tools">
-            <div class="skill-icon-wrapper"><i class="ri-layout-masonry-line"></i></div>
+          <!-- Skill: Hugging Face & Transformers -->
+          <div class="skill-card glass-card" data-category="deeplearning">
+            <div class="skill-icon-wrapper"><i class="ri-robot-line"></i></div>
             <div class="skill-details">
               <div class="skill-header">
-                <span class="skill-name">Figma & Design Systems</span>
-                <span class="skill-percent">91%</span>
+                <span class="skill-name">Hugging Face & Transformers</span>
+                <span class="skill-percent">94%</span>
               </div>
               <div class="progress-track">
-                <div class="progress-bar" style="--progress: 91%;"></div>
+                <div class="progress-bar" style="--progress: 94%;"></div>
               </div>
-              <span class="skill-exp">Component Libraries, Design Tokens, Prototyping</span>
+              <span class="skill-exp">Fine-tuning, PEFT / LoRA, Tokenizers, Quantization</span>
             </div>
           </div>
 
-          <!-- Skill: Git & DevOps Tools -->
-          <div class="skill-card glass-card" data-category="tools">
-            <div class="skill-icon-wrapper"><i class="ri-git-branch-line"></i></div>
+          <!-- Skill: Computer Vision & OpenCV -->
+          <div class="skill-card glass-card" data-category="vision-nlp">
+            <div class="skill-icon-wrapper"><i class="ri-eye-line"></i></div>
             <div class="skill-details">
               <div class="skill-header">
-                <span class="skill-name">Git & GitHub Actions</span>
+                <span class="skill-name">Computer Vision & OpenCV</span>
                 <span class="skill-percent">93%</span>
               </div>
               <div class="progress-track">
                 <div class="progress-bar" style="--progress: 93%;"></div>
               </div>
-              <span class="skill-exp">Trunk-based workflow, Automated testing, Releases</span>
+              <span class="skill-exp">YOLOv8/v9, ViT, SAM, Image Segmentation, Grad-CAM</span>
+            </div>
+          </div>
+
+          <!-- Skill: Generative AI & LLMs -->
+          <div class="skill-card glass-card" data-category="vision-nlp">
+            <div class="skill-icon-wrapper"><i class="ri-chat-smile-2-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">LLMs, LangChain & RAG</span>
+                <span class="skill-percent">91%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 91%;"></div>
+              </div>
+              <span class="skill-exp">Multi-Agent Systems, ChromaDB, Hybrid Search, Cohere Rerank</span>
+            </div>
+          </div>
+
+          <!-- Skill: Python & Mathematical Computing -->
+          <div class="skill-card glass-card" data-category="languages">
+            <div class="skill-icon-wrapper"><i class="ri-code-box-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">Python & Numerical Computing</span>
+                <span class="skill-percent">98%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 98%;"></div>
+              </div>
+              <span class="skill-exp">NumPy, SciPy, Pandas, Vectorized Math, Linear Algebra</span>
+            </div>
+          </div>
+
+          <!-- Skill: Scikit-Learn & Classical ML -->
+          <div class="skill-card glass-card" data-category="deeplearning">
+            <div class="skill-icon-wrapper"><i class="ri-line-chart-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">Scikit-Learn & Statistical ML</span>
+                <span class="skill-percent">95%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 95%;"></div>
+              </div>
+              <span class="skill-exp">XGBoost, LightGBM, Random Forests, PCA, SVM, Clustering</span>
+            </div>
+          </div>
+
+          <!-- Skill: C++ & DSA -->
+          <div class="skill-card glass-card" data-category="languages">
+            <div class="skill-icon-wrapper"><i class="ri-cpu-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">C++ & Algorithmic DSA</span>
+                <span class="skill-percent">88%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 88%;"></div>
+              </div>
+              <span class="skill-exp">Memory Allocation, Graphs, Dynamic Programming, High-Perf Logic</span>
+            </div>
+          </div>
+
+          <!-- Skill: FastAPI & Backend -->
+          <div class="skill-card glass-card" data-category="mlops">
+            <div class="skill-icon-wrapper"><i class="ri-server-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">FastAPI & Async AI Services</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 92%;"></div>
+              </div>
+              <span class="skill-exp">RESTful Inference APIs, Streaming SSE, WebSockets, Docker</span>
+            </div>
+          </div>
+
+          <!-- Skill: TensorRT & ONNX Runtime -->
+          <div class="skill-card glass-card" data-category="mlops">
+            <div class="skill-icon-wrapper"><i class="ri-speed-up-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">TensorRT, ONNX & MLOps</span>
+                <span class="skill-percent">89%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 89%;"></div>
+              </div>
+              <span class="skill-exp">INT8/FP16 Quantization, MLflow, Weights & Biases, DVC</span>
+            </div>
+          </div>
+
+          <!-- Skill: SQL & Vector Databases -->
+          <div class="skill-card glass-card" data-category="mlops">
+            <div class="skill-icon-wrapper"><i class="ri-database-2-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">PostgreSQL & Vector DBs</span>
+                <span class="skill-percent">87%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 87%;"></div>
+              </div>
+              <span class="skill-exp">ChromaDB, Pinecone, pgvector, Redis Caching</span>
+            </div>
+          </div>
+
+          <!-- Skill: AWS & Cloud ML -->
+          <div class="skill-card glass-card" data-category="mlops">
+            <div class="skill-icon-wrapper"><i class="ri-cloud-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">AWS Cloud & SageMaker</span>
+                <span class="skill-percent">84%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 84%;"></div>
+              </div>
+              <span class="skill-exp">EC2 GPU Nodes, S3 Datasets, Lambda Serverless, CloudWatch</span>
+            </div>
+          </div>
+
+          <!-- Skill: Streamlit, Gradio & Web UI -->
+          <div class="skill-card glass-card" data-category="web">
+            <div class="skill-icon-wrapper"><i class="ri-layout-masonry-line"></i></div>
+            <div class="skill-details">
+              <div class="skill-header">
+                <span class="skill-name">Streamlit, Gradio & Web UI</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" style="--progress: 92%;"></div>
+              </div>
+              <span class="skill-exp">Interactive AI Web Apps, Vanilla JS, Responsive CSS3, Charts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive AI Playground / Live Demo Section -->
+    <section class="section playground-section" id="playground">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="ri-flask-line"></i> Hands-On Engineering</span>
+          <h2 class="section-title">Interactive <span class="gradient-text">AI Playground</span></h2>
+          <p class="section-subtitle">Experience real-time neural inference simulation and interactive synaptic signal propagation.</p>
+        </div>
+
+        <div class="playground-wrapper glass-card">
+          <!-- Playground Tabs -->
+          <div class="playground-nav">
+            <button class="playground-tab-btn active" data-tab="sentiment-demo">
+              <i class="ri-chat-check-line"></i> Neural Text & Sentiment Analyzer
+            </button>
+            <button class="playground-tab-btn" data-tab="synapse-demo">
+              <i class="ri-node-tree"></i> Synapse Network Visualizer
+            </button>
+          </div>
+
+          <!-- Tab Content 1: Sentiment & Intent Classifier -->
+          <div class="playground-tab-content active" id="sentiment-demo">
+            <div class="ai-demo-grid">
+              <!-- Left input panel -->
+              <div class="ai-input-panel">
+                <div class="panel-header">
+                  <label for="aiDemoInput" class="panel-title">
+                    <i class="ri-edit-line"></i> Test Input Prompt
+                  </label>
+                  <span class="badge-mini">Model: DistilBERT-Lite ONNX</span>
+                </div>
+                
+                <textarea id="aiDemoInput" rows="4" class="ai-textarea" placeholder="Type any sentence or click quick test prompts below...">The fine-tuned Vision Transformer achieved 98.4% validation accuracy with sub-18ms inference latency and zero catastrophic forgetting.</textarea>
+                
+                <div class="preset-prompts">
+                  <span class="preset-label">Quick Prompts:</span>
+                  <button class="preset-pill" data-text="The fine-tuned Vision Transformer achieved 98.4% validation accuracy with sub-18ms inference latency and zero catastrophic forgetting.">🚀 Breakthrough Benchmark</button>
+                  <button class="preset-pill" data-text="CUDA out of memory error crashed epoch 42 during multi-GPU gradient synchronization.">⚠️ CUDA Failure Bug</button>
+                  <button class="preset-pill" data-text="Analyzing stochastic gradient descent dynamics with adaptive learning rate warmup on CIFAR-100.">🔬 Technical Analysis</button>
+                </div>
+
+                <div class="demo-actions">
+                  <button class="btn btn-primary" id="runAiInferenceBtn">
+                    <i class="ri-play-circle-line"></i> Run Neural Inference
+                  </button>
+                  <button class="btn btn-glass btn-sm" id="clearAiInputBtn">
+                    <i class="ri-refresh-line"></i> Clear
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right analysis & telemetry output panel -->
+              <div class="ai-output-panel">
+                <div class="panel-header">
+                  <span class="panel-title"><i class="ri-pulse-line"></i> Real-Time Model Telemetry</span>
+                  <span class="status-indicator online"><span class="dot"></span> GPU Inference Ready</span>
+                </div>
+
+                <!-- Live Metrics Grid -->
+                <div class="telemetry-grid">
+                  <div class="telemetry-card">
+                    <span class="tele-val" id="teleTokens">24</span>
+                    <span class="tele-lbl">Token Count</span>
+                  </div>
+                  <div class="telemetry-card">
+                    <span class="tele-val" id="teleLatency">14.2 ms</span>
+                    <span class="tele-lbl">Inference Latency</span>
+                  </div>
+                  <div class="telemetry-card">
+                    <span class="tele-val text-cyan" id="teleConfidence">98.7%</span>
+                    <span class="tele-lbl">Primary Confidence</span>
+                  </div>
+                </div>
+
+                <!-- Softmax Probability Bars -->
+                <div class="probabilities-container">
+                  <h4 class="prob-heading">Softmax Class Probability Distribution:</h4>
+                  
+                  <div class="prob-row">
+                    <div class="prob-info">
+                      <span>Positive / Breakthrough</span>
+                      <span class="prob-num" id="probPosNum">96%</span>
+                    </div>
+                    <div class="prob-track">
+                      <div class="prob-bar pos-bar" id="probPosBar" style="width: 96%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="prob-row">
+                    <div class="prob-info">
+                      <span>Technical / Analytical</span>
+                      <span class="prob-num" id="probAnaNum">84%</span>
+                    </div>
+                    <div class="prob-track">
+                      <div class="prob-bar ana-bar" id="probAnaBar" style="width: 84%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="prob-row">
+                    <div class="prob-info">
+                      <span>Critical / Issue Detection</span>
+                      <span class="prob-num" id="probCritNum">3%</span>
+                    </div>
+                    <div class="prob-track">
+                      <div class="prob-bar crit-bar" id="probCritBar" style="width: 3%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tokenized Representation -->
+                <div class="token-stream-box">
+                  <span class="token-stream-label">Subword Token Stream [BPE]:</span>
+                  <div class="token-chips" id="tokenChipsContainer">
+                    <span class="token-chip">[CLS]</span>
+                    <span class="token-chip">The</span>
+                    <span class="token-chip">fine</span>
+                    <span class="token-chip">##tuned</span>
+                    <span class="token-chip">Vision</span>
+                    <span class="token-chip">Transformer</span>
+                    <span class="token-chip">98.4%</span>
+                    <span class="token-chip">[SEP]</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content 2: Synapse Network Visualizer -->
+          <div class="playground-tab-content" id="synapse-demo">
+            <div class="synapse-container">
+              <div class="synapse-controls">
+                <button class="btn btn-primary btn-sm" id="stimulatePulseBtn">
+                  <i class="ri-flashlight-line"></i> Stimulate Forward Pass
+                </button>
+                <div class="control-group">
+                  <span class="control-label">Activation Function:</span>
+                  <button class="pill-mini active" data-act="gelu">GELU</button>
+                  <button class="pill-mini" data-act="relu">ReLU</button>
+                  <button class="pill-mini" data-act="swish">Swish</button>
+                </div>
+                <div class="synapse-status-text" id="synapseStatus">
+                  Architecture: 4-Layer Multilayer Perceptron (4 -> 8 -> 8 -> 3)
+                </div>
+              </div>
+              <canvas id="synapseCanvas" width="900" height="340" class="synapse-canvas"></canvas>
             </div>
           </div>
         </div>
@@ -462,172 +670,255 @@
     <section class="section projects-section" id="projects">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="ri-folder-open-line"></i> Selected Works</span>
-          <h2 class="section-title">Featured <span class="gradient-text">Creations</span></h2>
-          <p class="section-subtitle">Real-world applications engineered for real business outcomes and user engagement.</p>
+          <span class="section-tag"><i class="ri-folder-open-line"></i> Selected AI Systems</span>
+          <h2 class="section-title">Featured <span class="gradient-text">AI Creations</span></h2>
+          <p class="section-subtitle">Real-world deep learning architectures engineered for precision, latency, and societal impact.</p>
         </div>
 
         <!-- Project Filter Buttons -->
         <div class="projects-filter-nav">
           <button class="filter-pill active" data-project-filter="all">All Projects</button>
-          <button class="filter-pill" data-project-filter="ai">AI / SaaS</button>
-          <button class="filter-pill" data-project-filter="fintech">FinTech</button>
-          <button class="filter-pill" data-project-filter="cloud">Cloud & DevOps</button>
-          <button class="filter-pill" data-project-filter="creative">3D & Creative</button>
+          <button class="filter-pill" data-project-filter="vision">Computer Vision</button>
+          <button class="filter-pill" data-project-filter="llm">LLMs & NLP</button>
+          <button class="filter-pill" data-project-filter="rl">Reinforcement Learning</button>
+          <button class="filter-pill" data-project-filter="applied">Applied AI & Edge</button>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-grid" id="projectsGrid">
           
-          <!-- Project 1: Aura AI -->
-          <article class="project-card glass-card" data-category="ai">
+          <!-- Project 1: NeuroVision -->
+          <article class="project-card glass-card" data-category="vision">
             <div class="project-thumb-container">
-              <img src="assets/project1-aura-ai.jpg" alt="AURA AI Analytics Dashboard" class="project-thumb" loading="lazy">
+              <img src="assets/project1-neurovision.jpg" alt="NeuroVision Thoracic Pathology AI" class="project-thumb" loading="lazy">
               <div class="project-overlay">
-                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="aura-ai">
-                  <i class="ri-eye-line"></i> View Case Study
+                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="neurovision">
+                  <i class="ri-eye-line"></i> View Architecture Study
                 </button>
               </div>
             </div>
             <div class="project-content">
               <div class="project-meta">
-                <span class="project-badge">AI Platform</span>
-                <span class="project-year">2024</span>
+                <span class="project-badge">Medical Computer Vision</span>
+                <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">AURA — Predictive Intelligence & Metrics Platform</h3>
+              <h3 class="project-title">NeuroVision — Diagnostic AI & Grad-CAM Visualizer</h3>
               <p class="project-desc">
-                An enterprise AI dashboard handling 4M+ real-time predictive insights per month with sub-100ms anomaly detection and live data stream visualizations.
+                High-precision deep learning diagnostic engine analyzing chest radiography scans across 14 thoracic pathologies. Generates explainable Grad-CAM heatmaps with 98.4% ROC-AUC on NIH ChestX-ray14 benchmark.
               </p>
               <div class="project-tech-tags">
-                <span>Next.js 14</span>
-                <span>FastAPI</span>
+                <span>Vision Transformer</span>
+                <span>DenseNet-121</span>
                 <span>PyTorch</span>
-                <span>Tailwind</span>
-                <span>WebSockets</span>
+                <span>Grad-CAM</span>
+                <span>ONNX Runtime</span>
+                <span>FastAPI</span>
               </div>
               <div class="project-links">
-                <button class="project-link-btn view-details-btn" data-project-id="aura-ai">
+                <button class="project-link-btn view-details-btn" data-project-id="neurovision">
                   <span>Explore Architecture</span>
                   <i class="ri-arrow-right-line"></i>
                 </button>
                 <div class="external-links">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
-                  <a href="#projects" class="icon-link" aria-label="Live Demo" title="Live Preview"><i class="ri-external-link-line"></i></a>
+                  <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
+                  <a href="#playground" class="icon-link" aria-label="Live Demo" title="Try Live Playground"><i class="ri-external-link-line"></i></a>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: Apex Crypto & FinTech -->
-          <article class="project-card glass-card" data-category="fintech">
+          <!-- Project 2: NexusRAG -->
+          <article class="project-card glass-card" data-category="llm">
             <div class="project-thumb-container">
-              <img src="assets/project2-crypto-wallet.jpg" alt="Apex FinTech Mobile & Web Suite" class="project-thumb" loading="lazy">
+              <img src="assets/project2-nexusrag.jpg" alt="NexusRAG Autonomous Multi-Agent Retrieval" class="project-thumb" loading="lazy">
               <div class="project-overlay">
-                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="apex-wallet">
-                  <i class="ri-eye-line"></i> View Case Study
+                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="nexusrag">
+                  <i class="ri-eye-line"></i> View Architecture Study
                 </button>
               </div>
             </div>
             <div class="project-content">
               <div class="project-meta">
-                <span class="project-badge">FinTech & Web3</span>
-                <span class="project-year">2024</span>
+                <span class="project-badge">Generative AI & LLMs</span>
+                <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">Apex — Institutional Crypto & Wealth Portal</h3>
+              <h3 class="project-title">NexusRAG — Multi-Agent Knowledge Retrieval Engine</h3>
               <p class="project-desc">
-                Multi-asset institutional trading terminal and mobile wallet boasting bank-grade biometric encryption, instant cross-chain swaps, and automated portfolio rebalancing.
+                Autonomous agentic RAG system built on quantized Llama-3-8B. Features hybrid sparse/dense vector retrieval (BM25 + ChromaDB embeddings), semantic re-ranking, and low-latency token streaming over WebSockets.
               </p>
               <div class="project-tech-tags">
-                <span>React Native</span>
-                <span>TypeScript</span>
-                <span>Go Microservices</span>
-                <span>PostgreSQL</span>
-              </div>
-              <div class="project-links">
-                <button class="project-link-btn view-details-btn" data-project-id="apex-wallet">
-                  <span>Explore Architecture</span>
-                  <i class="ri-arrow-right-line"></i>
-                </button>
-                <div class="external-links">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
-                  <a href="#projects" class="icon-link" aria-label="Live Demo" title="Live Preview"><i class="ri-external-link-line"></i></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: Cybernetic Cloud Ops -->
-          <article class="project-card glass-card" data-category="cloud">
-            <div class="project-thumb-container">
-              <img src="assets/project3-cloud-ops.jpg" alt="Cybernetic Cloud Infrastructure Telemetry" class="project-thumb" loading="lazy">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="cloud-ops">
-                  <i class="ri-eye-line"></i> View Case Study
-                </button>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-meta">
-                <span class="project-badge">Cloud Telemetry</span>
-                <span class="project-year">2023</span>
-              </div>
-              <h3 class="project-title">C-Ops — Multi-Region Kubernetes Network Visualizer</h3>
-              <p class="project-desc">
-                Real-time telemetry and service mesh observer mapping cross-continental cluster traffic, pod health latencies, and autonomous disaster mitigation triggers.
-              </p>
-              <div class="project-tech-tags">
-                <span>Kubernetes</span>
-                <span>Prometheus</span>
-                <span>GraphQL</span>
-                <span>D3.js</span>
+                <span>LangChain</span>
+                <span>Llama-3-8B (GGUF)</span>
+                <span>ChromaDB</span>
+                <span>Cohere Rerank</span>
+                <span>FastAPI</span>
                 <span>Docker</span>
               </div>
               <div class="project-links">
-                <button class="project-link-btn view-details-btn" data-project-id="cloud-ops">
+                <button class="project-link-btn view-details-btn" data-project-id="nexusrag">
                   <span>Explore Architecture</span>
                   <i class="ri-arrow-right-line"></i>
                 </button>
                 <div class="external-links">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
+                  <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
+                  <a href="#playground" class="icon-link" aria-label="Live Demo" title="Try Live Playground"><i class="ri-external-link-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: DeepDrive-RL -->
+          <article class="project-card glass-card" data-category="rl">
+            <div class="project-thumb-container">
+              <img src="assets/project3-deepdrive.jpg" alt="DeepDrive Autonomous Driving RL Agent" class="project-thumb" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="deepdrive">
+                  <i class="ri-eye-line"></i> View Architecture Study
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-badge">Reinforcement Learning</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">DeepDrive-RL — Sensor Fusion Autonomous Driving Agent</h3>
+              <p class="project-desc">
+                End-to-end deep reinforcement learning policy (PPO & Soft Actor-Critic) deployed in the CARLA simulator. Fuses 3D LiDAR point cloud clusters with semantic segmentation to navigate randomized urban traffic with 99.2% safety.
+              </p>
+              <div class="project-tech-tags">
+                <span>PyTorch RL</span>
+                <span>PPO / SAC</span>
+                <span>CARLA Simulator</span>
+                <span>3D LiDAR</span>
+                <span>OpenCV</span>
+                <span>CUDA</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-details-btn" data-project-id="deepdrive">
+                  <span>Explore Architecture</span>
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+                <div class="external-links">
+                  <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
+                  <a href="#projects" class="icon-link" aria-label="Live Demo" title="Simulator Video"><i class="ri-external-link-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: CropPulse AI -->
+          <article class="project-card glass-card" data-category="applied">
+            <div class="project-thumb-container">
+              <img src="assets/project4-croppulse.jpg" alt="CropPulse Precision Agriculture AI" class="project-thumb" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="croppulse">
+                  <i class="ri-eye-line"></i> View Architecture Study
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-badge">Computer Vision & IoT</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">CropPulse — Hyperspectral Drone Crop Pathology AI</h3>
+              <p class="project-desc">
+                Edge-deployable precision farming system diagnosing 38+ crop blights and pest infestations from aerial drone imagery and smartphone photos. Awarded National Hackathon Top 5 for offline edge execution.
+              </p>
+              <div class="project-tech-tags">
+                <span>YOLOv8</span>
+                <span>EfficientNet-B4</span>
+                <span>TFLite & ONNX</span>
+                <span>Streamlit PWA</span>
+                <span>GeoTIFF</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-details-btn" data-project-id="croppulse">
+                  <span>Explore Architecture</span>
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+                <div class="external-links">
+                  <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
+                  <a href="#projects" class="icon-link" aria-label="Live Demo" title="Field App Preview"><i class="ri-external-link-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: AlphaForecaster -->
+          <article class="project-card glass-card" data-category="applied">
+            <div class="project-thumb-container">
+              <img src="assets/project2-crypto-wallet.jpg" alt="AlphaForecaster Time Series ML" class="project-thumb" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="alphaforecaster">
+                  <i class="ri-eye-line"></i> View Architecture Study
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-badge">Time-Series & Forecasting</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">AlphaForecaster — High-Frequency Order Book ML</h3>
+              <p class="project-desc">
+                Temporal Fusion Transformer (TFT) with multi-head self-attention forecasting microstructure volatility and order book liquidity imbalance in real-time with sub-10ms latency via Redis stream consumer buffers.
+              </p>
+              <div class="project-tech-tags">
+                <span>Temporal Transformers</span>
+                <span>PyTorch Forecasting</span>
+                <span>Redis Streams</span>
+                <span>WebSockets</span>
+                <span>NumPy</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-details-btn" data-project-id="alphaforecaster">
+                  <span>Explore Architecture</span>
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+                <div class="external-links">
+                  <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
                   <a href="#projects" class="icon-link" aria-label="Live Demo" title="Live Preview"><i class="ri-external-link-line"></i></a>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 4: Cybernex 3D Experience -->
-          <article class="project-card glass-card" data-category="creative">
+          <!-- Project 6: SynthVoice-Omni -->
+          <article class="project-card glass-card" data-category="llm">
             <div class="project-thumb-container">
-              <img src="assets/project4-cybernex-3d.jpg" alt="Cybernex Digital Agency Web Experience" class="project-thumb" loading="lazy">
+              <img src="assets/project4-cybernex-3d.jpg" alt="SynthVoice Multilingual Speech AI" class="project-thumb" loading="lazy">
               <div class="project-overlay">
-                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="cybernex-3d">
-                  <i class="ri-eye-line"></i> View Case Study
+                <button class="btn btn-sm btn-primary view-details-btn" data-project-id="synthvoice">
+                  <i class="ri-eye-line"></i> View Architecture Study
                 </button>
               </div>
             </div>
             <div class="project-content">
               <div class="project-meta">
-                <span class="project-badge">Creative & WebGL</span>
+                <span class="project-badge">Speech & Audio Deep Learning</span>
                 <span class="project-year">2023</span>
               </div>
-              <h3 class="project-title">Cybernex — 3D Interactive Spatial Web Experience</h3>
+              <h3 class="project-title">SynthVoice — Real-Time Multilingual Neural Speech AI</h3>
               <p class="project-desc">
-                An Awwwards-featured interactive agency showcase leveraging Three.js shaders, custom physics simulation, and smooth GPU-rendered sound synthesis.
+                End-to-end speech recognition and neural synthesis engine. Fine-tuned OpenAI Whisper on diverse regional Indian accents paired with a lightweight FastSpeech2 neural vocoder for sub-120ms conversational audio streaming.
               </p>
               <div class="project-tech-tags">
-                <span>Three.js</span>
-                <span>GLSL Shaders</span>
-                <span>GSAP</span>
-                <span>Web Audio API</span>
+                <span>Whisper Fine-Tuning</span>
+                <span>FastSpeech 2</span>
+                <span>Wav2Vec 2.0</span>
+                <span>WebRTC</span>
+                <span>PyTorch</span>
               </div>
               <div class="project-links">
-                <button class="project-link-btn view-details-btn" data-project-id="cybernex-3d">
+                <button class="project-link-btn view-details-btn" data-project-id="synthvoice">
                   <span>Explore Architecture</span>
                   <i class="ri-arrow-right-line"></i>
                 </button>
                 <div class="external-links">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
-                  <a href="#projects" class="icon-link" aria-label="Live Demo" title="Live Preview"><i class="ri-external-link-line"></i></a>
+                  <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository" title="GitHub Code"><i class="ri-github-line"></i></a>
+                  <a href="#projects" class="icon-link" aria-label="Live Demo" title="Audio Stream Preview"><i class="ri-external-link-line"></i></a>
                 </div>
               </div>
             </div>
@@ -637,92 +928,119 @@
       </div>
     </section>
 
-    <!-- Experience & Timeline Section -->
+    <!-- Hackathons, Research & Experience Section -->
     <section class="section experience-section" id="experience">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="ri-briefcase-4-line"></i> Career Journey</span>
-          <h2 class="section-title">Work Experience & <span class="gradient-text">Milestones</span></h2>
-          <p class="section-subtitle">Proven track record of engineering leadership and high-impact contributions.</p>
+          <span class="section-tag"><i class="ri-trophy-line"></i> Proven Execution</span>
+          <h2 class="section-title">Hackathons, Research & <span class="gradient-text">Internships</span></h2>
+          <p class="section-subtitle">Hands-on collegiate experience solving difficult computer vision and deep learning challenges.</p>
         </div>
 
         <div class="timeline-wrapper">
           <div class="timeline-line"></div>
 
-          <!-- Timeline Item 1 -->
+          <!-- Timeline Item 1: SIH -->
           <div class="timeline-item">
-            <div class="timeline-dot"><i class="ri-flashlight-line"></i></div>
+            <div class="timeline-dot"><i class="ri-award-fill"></i></div>
             <div class="timeline-content glass-card">
               <div class="timeline-meta">
-                <span class="timeline-role">Lead Full-Stack Architect</span>
-                <span class="timeline-date">2022 — Present</span>
+                <span class="timeline-role">🏆 National Finalist — Smart India Hackathon (SIH)</span>
+                <span class="timeline-date">2024</span>
               </div>
-              <h3 class="timeline-company">Nexus Technologies • San Francisco, CA (Remote)</h3>
+              <h3 class="timeline-company">Ministry of Education / Government of India</h3>
               <p class="timeline-desc">
-                Spearheading front-end and cloud architecture for flagship SaaS applications servicing over 800,000 monthly active users. Reduced bundle sizes by 42% and standardized company-wide design tokens and micro-frontend modularity.
+                Architected an autonomous aerial disaster rescue system utilizing thermal drone video streams to detect stranded human survivors in total darkness. Optimized custom YOLOv8 model down to 18MB for edge inference on NVIDIA Jetson Orin Nano.
               </p>
               <ul class="timeline-achievements">
-                <li><i class="ri-check-line"></i> Mentored a squad of 8 frontend and backend engineers.</li>
-                <li><i class="ri-check-line"></i> Migrated legacy monorepo to Next.js App Router and Turborepo.</li>
-                <li><i class="ri-check-line"></i> Slashed AWS cloud compute costs by 28% via serverless auto-scaling.</li>
+                <li><i class="ri-check-line"></i> Selected as Top 5 finalist out of 50,000+ national applicant teams.</li>
+                <li><i class="ri-check-line"></i> Reached 28 FPS real-time detection on low-power edge compute.</li>
+                <li><i class="ri-check-line"></i> Integrated automated GPS telemetry broadcasting to rescue control units.</li>
               </ul>
               <div class="timeline-tags">
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>AWS</span>
-                <span>Docker</span>
-                <span>GraphQL</span>
+                <span>Edge AI</span>
+                <span>YOLOv8</span>
+                <span>Thermal Vision</span>
+                <span>NVIDIA Jetson</span>
+                <span>TensorRT</span>
               </div>
             </div>
           </div>
 
-          <!-- Timeline Item 2 -->
+          <!-- Timeline Item 2: ML Research Intern -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="ri-microscope-line"></i></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-meta">
+                <span class="timeline-role">Machine Learning Research Intern</span>
+                <span class="timeline-date">Summer 2025</span>
+              </div>
+              <h3 class="timeline-company">Center for AI & Cognitive Computing</h3>
+              <p class="timeline-desc">
+                Conducted deep learning research on post-training quantization (PTQ) and structural attention pruning for lightweight Vision Transformers (ViT) on constrained edge medical devices.
+              </p>
+              <ul class="timeline-achievements">
+                <li><i class="ri-check-line"></i> Reduced model parameter footprint by 58% while maintaining 98.1% of original classification accuracy.</li>
+                <li><i class="ri-check-line"></i> Benchmark-tested cross-platform throughput across TensorRT, ONNX, and OpenVINO.</li>
+                <li><i class="ri-check-line"></i> Drafted research paper findings for upcoming AI conference submission.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>Vision Transformers</span>
+                <span>Model Quantization</span>
+                <span>PyTorch</span>
+                <span>CUDA</span>
+                <span>ONNX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: Computer Vision Intern -->
           <div class="timeline-item">
             <div class="timeline-dot"><i class="ri-code-box-line"></i></div>
             <div class="timeline-content glass-card">
               <div class="timeline-meta">
-                <span class="timeline-role">Senior Software Engineer</span>
-                <span class="timeline-date">2020 — 2022</span>
+                <span class="timeline-role">Computer Vision Engineering Intern</span>
+                <span class="timeline-date">Winter 2024</span>
               </div>
-              <h3 class="timeline-company">Hyperion Software Labs • Austin, TX</h3>
+              <h3 class="timeline-company">NeuralCraft Solutions</h3>
               <p class="timeline-desc">
-                Architected high-throughput financial data streaming services and real-time visualization widgets. Designed fault-tolerant REST and WebSocket APIs in Node.js and Go.
+                Developed real-time video analytics pipelines for smart facility occupancy and safety compliance. Implemented multi-camera tracking with feature re-identification.
               </p>
               <ul class="timeline-achievements">
-                <li><i class="ri-check-line"></i> Achieved 99.98% service uptime across critical financial pipelines.</li>
-                <li><i class="ri-check-line"></i> Reduced latency of market data streaming from 420ms to 45ms.</li>
+                <li><i class="ri-check-line"></i> Built person re-identification pipeline tracking individuals across 6 non-overlapping CCTV camera angles.</li>
+                <li><i class="ri-check-line"></i> Slashed server compute costs by 35% through dynamic frame skipping and motion thresholding.</li>
               </ul>
               <div class="timeline-tags">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>Redis</span>
-                <span>PostgreSQL</span>
-                <span>Jest</span>
+                <span>OpenCV</span>
+                <span>DeepSORT</span>
+                <span>YOLO</span>
+                <span>FastAPI</span>
+                <span>Docker</span>
               </div>
             </div>
           </div>
 
-          <!-- Timeline Item 3 -->
+          <!-- Timeline Item 4: 1st Place AI Hackathon -->
           <div class="timeline-item">
-            <div class="timeline-dot"><i class="ri-terminal-line"></i></div>
+            <div class="timeline-dot"><i class="ri-trophy-line"></i></div>
             <div class="timeline-content glass-card">
               <div class="timeline-meta">
-                <span class="timeline-role">Full-Stack Developer</span>
-                <span class="timeline-date">2018 — 2020</span>
+                <span class="timeline-role">🥇 1st Place Winner — Inter-Collegiate AI Conclave</span>
+                <span class="timeline-date">2023</span>
               </div>
-              <h3 class="timeline-company">Vertex Digital Agency • New York, NY</h3>
+              <h3 class="timeline-company">National Collegiate AI Innovation League</h3>
               <p class="timeline-desc">
-                Constructed high-conversion eCommerce platforms and dynamic web applications for Fortune 500 clients. Collaborated closely with UI/UX designers to implement pixel-perfect, accessible animations.
+                Awarded First Prize among 120+ collegiate developer teams for developing CropPulse AI, a zero-cloud offline crop diagnostic tool helping smallholder farmers identify disease outbreaks in remote areas.
               </p>
               <ul class="timeline-achievements">
-                <li><i class="ri-check-line"></i> Built 20+ tailored web apps with 100/100 Lighthouse performance.</li>
-                <li><i class="ri-check-line"></i> Integrated headless CMS (Sanity, Strapi) and payment gateways (Stripe).</li>
+                <li><i class="ri-check-line"></i> Evaluated highest for technical architecture, social relevance, and UX simplicity.</li>
+                <li><i class="ri-check-line"></i> Received INR 50,000 cash grant and incubator mentorship support.</li>
               </ul>
               <div class="timeline-tags">
-                <span>JavaScript</span>
-                <span>Vue.js</span>
-                <span>TailwindCSS</span>
-                <span>Stripe API</span>
+                <span>Computer Vision</span>
+                <span>Mobile Edge ML</span>
+                <span>Social Good AI</span>
+                <span>Streamlit</span>
               </div>
             </div>
           </div>
@@ -731,60 +1049,87 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials-section" id="testimonials">
+    <!-- Education & Certifications Section -->
+    <section class="section education-section" id="education">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="ri-chat-quote-line"></i> Endorsements</span>
-          <h2 class="section-title">What Collaborators <span class="gradient-text">Say</span></h2>
-          <p class="section-subtitle">Feedback from engineering leaders, product managers, and founders I've built with.</p>
+          <span class="section-tag"><i class="ri-book-read-line"></i> Formal Learning</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
+          <p class="section-subtitle">Academic foundations and industry-recognized certifications validating deep technical expertise.</p>
         </div>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card glass-card">
-            <div class="stars">
-              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        <div class="education-grid">
+          <!-- Degree Card -->
+          <div class="degree-card glass-card">
+            <div class="degree-badge-strip">
+              <span class="cgpa-pill"><i class="ri-star-fill"></i> 8.92 / 10.0 CGPA</span>
+              <span class="year-pill">2022 — 2026</span>
             </div>
-            <p class="quote-text">
-              "Gunjan is an exceptionally rare talent who possesses both an artist's eye for micro-interactions and an architect's rigor for high-scale backend code. He transformed our MVP into a robust, high-performance product in record time."
-            </p>
-            <div class="client-info">
-              <div class="client-avatar">EK</div>
+            
+            <div class="degree-info">
+              <div class="degree-icon"><i class="ri-graduation-cap-fill"></i></div>
               <div>
-                <h4 class="client-name">Elena Rostova</h4>
-                <span class="client-title">VP of Engineering at CloudScale</span>
+                <h3 class="degree-name">Bachelor of Technology (B.Tech)</h3>
+                <h4 class="degree-major gradient-text">Artificial Intelligence & Machine Learning (AIML)</h4>
+                <p class="degree-inst">Department of Computer Science & Engineering</p>
+              </div>
+            </div>
+
+            <div class="coursework-box">
+              <span class="coursework-title">Relevant Core Coursework:</span>
+              <div class="coursework-tags">
+                <span>Deep Neural Networks</span>
+                <span>Natural Language Processing</span>
+                <span>Computer Vision</span>
+                <span>Linear Algebra & Calculus</span>
+                <span>Probability & Statistics</span>
+                <span>Data Structures & Algorithms</span>
+                <span>Reinforcement Learning</span>
+                <span>Operating Systems</span>
+                <span>Database Management (DBMS)</span>
               </div>
             </div>
           </div>
 
-          <div class="testimonial-card glass-card">
-            <div class="stars">
-              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-            </div>
-            <p class="quote-text">
-              "Working with Gunjan felt effortless. His communication is crisp, deadlines are always respected, and the code quality is cleanest I've inspected in my 12 years of tech leadership. A game-changer for our team."
-            </p>
-            <div class="client-info">
-              <div class="client-avatar">DC</div>
-              <div>
-                <h4 class="client-name">David Chen</h4>
-                <span class="client-title">Co-Founder & CTO at Apex Protocol</span>
+          <!-- Certifications Grid -->
+          <div class="certifications-list">
+            <!-- Cert 1 -->
+            <div class="cert-card glass-card">
+              <div class="cert-icon"><i class="ri-verified-badge-fill"></i></div>
+              <div class="cert-details">
+                <h4 class="cert-title">Deep Learning Specialization</h4>
+                <span class="cert-org">DeepLearning.AI & Andrew Ng (Coursera)</span>
+                <p class="cert-desc">Neural Networks, Hyperparameter Tuning, CNNs, Sequence Models & Attention Mechanisms.</p>
               </div>
             </div>
-          </div>
 
-          <div class="testimonial-card glass-card">
-            <div class="stars">
-              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            <!-- Cert 2 -->
+            <div class="cert-card glass-card">
+              <div class="cert-icon"><i class="ri-amazon-fill"></i></div>
+              <div class="cert-details">
+                <h4 class="cert-title">AWS Certified Machine Learning - Specialty</h4>
+                <span class="cert-org">Amazon Web Services (AWS)</span>
+                <p class="cert-desc">Data Engineering, Exploratory Analysis, Modeling, Machine Learning Implementation & Operations on AWS.</p>
+              </div>
             </div>
-            <p class="quote-text">
-              "The 3D interactive graphics and fluid web experience Gunjan delivered for our brand launch received tremendous praise from clients and industry design awards. Absolute master of modern web craftsmanship!"
-            </p>
-            <div class="client-info">
-              <div class="client-avatar">SM</div>
-              <div>
-                <h4 class="client-name">Sophia Martinez</h4>
-                <span class="client-title">Creative Director at Cybernex Studio</span>
+
+            <!-- Cert 3 -->
+            <div class="cert-card glass-card">
+              <div class="cert-icon"><i class="ri-robot-2-fill"></i></div>
+              <div class="cert-details">
+                <h4 class="cert-title">Hugging Face Transformers & NLP</h4>
+                <span class="cert-org">Hugging Face Open Source Community</span>
+                <p class="cert-desc">Fine-tuning LLMs, Tokenizers, Parameter-Efficient Fine-Tuning (PEFT/LoRA), and Multi-Task Pipelines.</p>
+              </div>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="cert-card glass-card">
+              <div class="cert-icon"><i class="ri-function-line"></i></div>
+              <div class="cert-details">
+                <h4 class="cert-title">Mathematics for Machine Learning</h4>
+                <span class="cert-org">Imperial College London (Coursera)</span>
+                <p class="cert-desc">Multivariate Calculus, Linear Algebra, Orthogonal Projections, and Principal Component Analysis (PCA).</p>
               </div>
             </div>
           </div>
@@ -796,9 +1141,9 @@
     <section class="section contact-section" id="contact">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="ri-mail-send-line"></i> Let's Talk</span>
-          <h2 class="section-title">Have a Project in Mind? <span class="gradient-text">Let's Build It.</span></h2>
-          <p class="section-subtitle">Whether you have an exciting idea, an open position, or just want to discuss tech—my inbox is always open.</p>
+          <span class="section-tag"><i class="ri-mail-send-line"></i> Get In Touch</span>
+          <h2 class="section-title">Interested in Collaborating? <span class="gradient-text">Let's Connect.</span></h2>
+          <p class="section-subtitle">Actively seeking AI/ML engineering internships, research fellowships, and full-time 2026 roles.</p>
         </div>
 
         <div class="contact-wrapper">
@@ -807,8 +1152,8 @@
             <div class="info-card glass-card">
               <div class="info-icon"><i class="ri-mail-line"></i></div>
               <div class="info-details">
-                <span class="info-label">Email Address</span>
-                <a href="mailto:gunjan.dev@example.com" class="info-val">gunjan.dev@example.com</a>
+                <span class="info-label">Direct Email</span>
+                <a href="mailto:sahilsingh.aiml26@gmail.com" class="info-val">sahilsingh.aiml26@gmail.com</a>
               </div>
               <button class="copy-btn" id="copyEmailBtn" title="Copy Email to Clipboard" aria-label="Copy Email">
                 <i class="ri-file-copy-line"></i>
@@ -818,31 +1163,34 @@
             <div class="info-card glass-card">
               <div class="info-icon"><i class="ri-map-pin-2-line"></i></div>
               <div class="info-details">
-                <span class="info-label">Location</span>
-                <span class="info-val">San Francisco, CA (Open to Remote Worldwide)</span>
+                <span class="info-label">Location & Relocation</span>
+                <span class="info-val">India • Open to Global Remote & On-Site Relocation</span>
               </div>
             </div>
 
             <div class="info-card glass-card">
               <div class="info-icon"><i class="ri-calendar-check-line"></i></div>
               <div class="info-details">
-                <span class="info-label">Current Availability</span>
-                <span class="info-val availability-status"><span class="status-dot"></span> Open for contracts & full-time roles</span>
+                <span class="info-label">Current Status & Availability</span>
+                <span class="info-val availability-status"><span class="status-dot"></span> Available for 2026 Roles & AI Internships</span>
               </div>
             </div>
 
             <!-- Social Card -->
             <div class="social-box glass-card">
-              <h4>Connect on Social</h4>
+              <h4>Developer & Research Profiles</h4>
               <div class="social-buttons">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <a href="https://github.com/gunjan-code284" target="_blank" rel="noopener noreferrer" class="social-btn">
                   <i class="ri-github-fill"></i> GitHub
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">
                   <i class="ri-linkedin-fill"></i> LinkedIn
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn">
-                  <i class="ri-twitter-x-fill"></i> X (Twitter)
+                <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="social-btn">
+                  <i class="ri-robot-2-line"></i> Hugging Face
+                </a>
+                <a href="https://kaggle.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                  <i class="ri-database-2-line"></i> Kaggle
                 </a>
               </div>
             </div>
@@ -856,7 +1204,7 @@
                   <label for="userName">Your Name <span class="req">*</span></label>
                   <div class="input-wrap">
                     <i class="ri-user-line input-icon"></i>
-                    <input type="text" id="userName" name="name" placeholder="Jane Doe" required autocomplete="name">
+                    <input type="text" id="userName" name="name" placeholder="Prof. / Recruiter / Founder Name" required autocomplete="name">
                   </div>
                   <span class="error-msg" id="nameError"></span>
                 </div>
@@ -865,7 +1213,7 @@
                   <label for="userEmail">Your Email <span class="req">*</span></label>
                   <div class="input-wrap">
                     <i class="ri-mail-line input-icon"></i>
-                    <input type="email" id="userEmail" name="email" placeholder="jane@example.com" required autocomplete="email">
+                    <input type="email" id="userEmail" name="email" placeholder="recruiter@techcompany.com" required autocomplete="email">
                   </div>
                   <span class="error-msg" id="emailError"></span>
                 </div>
@@ -875,7 +1223,7 @@
                 <label for="userSubject">Subject <span class="req">*</span></label>
                 <div class="input-wrap">
                   <i class="ri-bookmark-line input-icon"></i>
-                  <input type="text" id="userSubject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+                  <input type="text" id="userSubject" name="subject" placeholder="AI/ML Internship Opportunity / Research Collaboration" required>
                 </div>
                 <span class="error-msg" id="subjectError"></span>
               </div>
@@ -884,13 +1232,13 @@
                 <label for="userMessage">Message <span class="req">*</span></label>
                 <div class="input-wrap textarea-wrap">
                   <i class="ri-chat-3-line input-icon"></i>
-                  <textarea id="userMessage" name="message" rows="5" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+                  <textarea id="userMessage" name="message" rows="5" placeholder="Share details regarding the role, research project, or interview timeline..." required></textarea>
                 </div>
                 <span class="error-msg" id="messageError"></span>
               </div>
 
               <button type="submit" class="btn btn-primary btn-full submit-btn" id="submitBtn">
-                <span class="btn-text">Send Message</span>
+                <span class="btn-text">Send Message to Sahil</span>
                 <i class="ri-send-plane-fill"></i>
                 <div class="spinner" id="formSpinner"></div>
               </button>
@@ -906,23 +1254,24 @@
     <div class="container footer-container">
       <div class="footer-brand">
         <a href="#home" class="logo">
-          <span class="logo-symbol">&lt;G/&gt;</span>
-          <span class="logo-text">Gunjan<span class="accent-dot">.</span></span>
+          <span class="logo-symbol">&lt;Sahil.AI/&gt;</span>
+          <span class="logo-text">Sahil<span class="accent-dot">.</span>Singh</span>
         </a>
-        <p class="footer-tagline">Crafted with precision, passion, and modern web standards.</p>
+        <p class="footer-tagline">B.Tech Artificial Intelligence & Machine Learning Student • Built with mathematical passion & clean code.</p>
       </div>
 
       <div class="footer-links">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+        <a href="#about">Academics</a>
+        <a href="#skills">Arsenal</a>
+        <a href="#playground">AI Demo</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#experience">Hackathons</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">© <span id="currentYear">2026</span> Gunjan. All rights reserved.</p>
+        <p class="copyright">© <span id="currentYear">2026</span> Sahil Singh. All rights reserved.</p>
         <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
           <i class="ri-arrow-up-line"></i>
         </a>
@@ -943,25 +1292,128 @@
     </div>
   </div>
 
+  <!-- Interactive ATS Resume Modal -->
+  <div class="modal-backdrop" id="resumeModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog glass-card resume-modal-dialog">
+      <div class="modal-resume-header">
+        <div class="resume-header-title">
+          <i class="ri-file-user-line"></i>
+          <span>Curriculum Vitae — Sahil Singh</span>
+        </div>
+        <div class="resume-header-actions">
+          <button class="btn btn-primary btn-sm" id="printResumeBtn">
+            <i class="ri-printer-line"></i> Print / Save PDF
+          </button>
+          <button class="modal-close resume-close" id="resumeModalCloseBtn" aria-label="Close resume">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="resume-content-sheet" id="resumeSheet">
+        <header class="sheet-header">
+          <h1 class="sheet-name">SAHIL SINGH</h1>
+          <p class="sheet-headline">B.Tech in Artificial Intelligence & Machine Learning (AIML) Undergrad</p>
+          <div class="sheet-contact-row">
+            <span><i class="ri-mail-line"></i> sahil.singh.aiml26@gmail.com</span>
+            <span><i class="ri-map-pin-line"></i> India (Open to Remote / Relocation)</span>
+            <span><i class="ri-github-line"></i> github.com/gunjan-code284</span>
+            <span><i class="ri-linkedin-line"></i> linkedin.com/in/sahil-singh-aiml</span>
+          </div>
+        </header>
+
+        <section class="sheet-section">
+          <h2 class="sheet-sec-title">EDUCATION</h2>
+          <div class="sheet-item">
+            <div class="sheet-item-row">
+              <span class="sheet-bold">Bachelor of Technology (B.Tech) in Artificial Intelligence & Machine Learning</span>
+              <span class="sheet-date">2022 — 2026</span>
+            </div>
+            <div class="sheet-inst">Department of Computer Science & Engineering • CGPA: <strong>8.92 / 10.0</strong></div>
+            <p class="sheet-text"><strong>Core Coursework:</strong> Deep Neural Networks, Natural Language Processing, Computer Vision, Reinforcement Learning, Linear Algebra, Probability & Statistics, Data Structures & Algorithms, Database Systems.</p>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h2 class="sheet-sec-title">TECHNICAL SKILLS</h2>
+          <div class="sheet-skills-grid">
+            <div><strong>Deep Learning:</strong> PyTorch, TorchVision, Hugging Face Transformers, TensorFlow, Keras, ONNX, TensorRT</div>
+            <div><strong>Computer Vision & NLP:</strong> OpenCV, YOLOv8/v9, Vision Transformers (ViT), Segment Anything (SAM), LangChain, ChromaDB</div>
+            <div><strong>Languages & Math:</strong> Python, C++, SQL, NumPy, SciPy, Pandas, Multivariate Calculus, Linear Algebra</div>
+            <div><strong>MLOps & Cloud:</strong> FastAPI, Docker, MLflow, Weights & Biases, AWS (EC2, S3, SageMaker), Git, CI/CD</div>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h2 class="sheet-sec-title">KEY AI PROJECTS</h2>
+          <div class="sheet-item">
+            <div class="sheet-item-row">
+              <span class="sheet-bold">NeuroVision — Diagnostic AI & Grad-CAM Heatmap Platform</span>
+              <span class="sheet-date">2025</span>
+            </div>
+            <ul class="sheet-list">
+              <li>Architected multi-class thoracic pathology classifier using Vision Transformers (ViT) & DenseNet-121 on NIH ChestX-ray14.</li>
+              <li>Integrated Grad-CAM visual attention overlays to pinpoint pathology regions with 98.4% ROC-AUC score.</li>
+              <li>Exported to INT8 ONNX runtime achieving sub-25ms inference latency on FastAPI backend.</li>
+            </ul>
+          </div>
+
+          <div class="sheet-item">
+            <div class="sheet-item-row">
+              <span class="sheet-bold">NexusRAG — Autonomous Multi-Agent Retrieval-Augmented Generation</span>
+              <span class="sheet-date">2025</span>
+            </div>
+            <ul class="sheet-list">
+              <li>Engineered hybrid dense/sparse vector retrieval system with quantized Llama-3-8B and ChromaDB embeddings.</li>
+              <li>Implemented Cohere cross-encoder reranking, improving retrieval precision by 34% on technical documentation queries.</li>
+            </ul>
+          </div>
+
+          <div class="sheet-item">
+            <div class="sheet-item-row">
+              <span class="sheet-bold">DeepDrive-RL — Sensor Fusion Autonomous Driving Agent in CARLA</span>
+              <span class="sheet-date">2024</span>
+            </div>
+            <ul class="sheet-list">
+              <li>Trained end-to-end Deep Reinforcement Learning agents (PPO & SAC) fusing LiDAR point clouds and semantic masks.</li>
+              <li>Achieved 99.2% collision-free navigation across challenging weather and pedestrian traffic scenarios.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h2 class="sheet-sec-title">EXPERIENCE & HACKATHONS</h2>
+          <div class="sheet-item">
+            <div class="sheet-item-row">
+              <span class="sheet-bold">National Finalist — Smart India Hackathon (SIH 2024)</span>
+              <span class="sheet-date">2024</span>
+            </div>
+            <p class="sheet-text">Selected in Top 5 out of 50,000+ national applicants for edge AI casualty detection using aerial thermal drone cameras running 28 FPS on NVIDIA Jetson.</p>
+          </div>
+
+          <div class="sheet-item">
+            <div class="sheet-item-row">
+              <span class="sheet-bold">Machine Learning Research Intern — Center for AI & Cognitive Computing</span>
+              <span class="sheet-date">Summer 2025</span>
+            </div>
+            <p class="sheet-text">Investigated post-training quantization and structured attention pruning on Vision Transformers, reducing memory footprint by 58%.</p>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h2 class="sheet-sec-title">CERTIFICATIONS</h2>
+          <div class="sheet-cert-row">
+            <span>• Deep Learning Specialization (DeepLearning.AI / Andrew Ng)</span>
+            <span>• AWS Certified Machine Learning - Specialty</span>
+            <span>• Hugging Face Transformers & Open-Source LLMs</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-
-  <!-- Voiceflow Chat Widget -->
-  <script type="text/javascript">
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '6abb551df9d3f334702fc95e' },
-            url: 'https://general-runtime.voiceflow.com',
-            voice: {
-              url: "https://runtime-api.voiceflow.com"
-            }
-          });
-        }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
 
   <!-- Scripts -->
   <script src="script.js"></script>
